@@ -6,27 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://drnoobw.github.io">
-  <title>SQL映射文件 | Hexo</title>
+  <title>AOP | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="目标 掌握通过SQL映射文件进行增删改查 掌握参数的使用 掌握resultMap 了解Cache的使用  1 SQL映射文件的几个顶级元素(按照定义的顺序) mapper - namespace cache - 配置给定命名空间的缓存 cache-ref – 从其他命名空间引用缓存配置 resultMap用来描述数据库结果集和对象的对应关系 sql – 可以重用的SQL块，也可以被其他语句引用 i">
+  <meta name="description" content="1 AOP概述 AOP(Aspect-Oriented-Programming，面向切面编程)：是一种新的方法论，是对传统OOP(Object-Oriented-Programming，面向对象编程)的补充。 面向对象  纵向继承机制 面向切面  横向抽取机制       AOP的底层实现： 使用JDK动态代理实现。 使用cglib来实现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL映射文件">
-<meta property="og:url" content="https://drnoobw.github.io/2020/04/04/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="AOP">
+<meta property="og:url" content="https://drnoobw.github.io/2020/02/04/Spring%E7%9A%84AOP/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="目标 掌握通过SQL映射文件进行增删改查 掌握参数的使用 掌握resultMap 了解Cache的使用  1 SQL映射文件的几个顶级元素(按照定义的顺序) mapper - namespace cache - 配置给定命名空间的缓存 cache-ref – 从其他命名空间引用缓存配置 resultMap用来描述数据库结果集和对象的对应关系 sql – 可以重用的SQL块，也可以被其他语句引用 i">
+<meta property="og:description" content="1 AOP概述 AOP(Aspect-Oriented-Programming，面向切面编程)：是一种新的方法论，是对传统OOP(Object-Oriented-Programming，面向对象编程)的补充。 面向对象  纵向继承机制 面向切面  横向抽取机制       AOP的底层实现： 使用JDK动态代理实现。 使用cglib来实现">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdn.net/20150726164134583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:image" content="https://img-blog.csdn.net/20150726164234783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="article:published_time" content="2020-04-04T10:12:34.000Z">
-<meta property="article:modified_time" content="2020-04-04T10:14:27.542Z">
+<meta property="article:published_time" content="2020-02-04T10:12:34.000Z">
+<meta property="article:modified_time" content="2020-04-04T14:25:28.316Z">
 <meta property="article:author" content="DR">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20150726164134583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
+  
+    <link rel="icon" href="/img/head.jpg">
   
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
@@ -75,6 +75,8 @@
 			<ul>
 			
 				<li><a href="/" target="_blank">主页</a></li>
+			
+				<li><a href="/archives/index.html" target="_blank">归档</a></li>
 			
 			</ul>
 		</nav>
@@ -126,6 +128,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -142,7 +146,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
+		        
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -158,202 +164,194 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SQL映射文件" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Spring的AOP" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      SQL映射文件
+      AOP
     </h1>
   
 
 
   
   
-<a href="/2020/04/04/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" class="archive-article-date">
-        <time datetime="2020-04-04T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
+<a href="/2020/02/04/Spring%E7%9A%84AOP/" class="archive-article-date">
+        <time datetime="2020-02-04T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
 </a>
 
   
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">8分</span>
+    </span>
+  </span>
+</div>
+
+
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul>
-<li>掌握通过SQL映射文件进行增删改查</li>
-<li>掌握参数的使用</li>
-<li>掌握resultMap</li>
-<li>了解Cache的使用</li>
+    <h1 id="1-AOP概述"><a href="#1-AOP概述" class="headerlink" title="1 AOP概述"></a>1 AOP概述</h1><ul>
+<li>AOP(Aspect-Oriented-Programming，面向切面编程)：是一种新的方法论，是对传统OOP(Object-Oriented-Programming，面向对象编程)的补充。<ul>
+<li>面向对象  纵向继承机制</li>
+<li>面向切面  横向抽取机制    </li>
 </ul>
-<h2 id="1-SQL映射文件的几个顶级元素-按照定义的顺序"><a href="#1-SQL映射文件的几个顶级元素-按照定义的顺序" class="headerlink" title="1 SQL映射文件的几个顶级元素(按照定义的顺序)"></a>1 SQL映射文件的几个顶级元素(按照定义的顺序)</h2><ul>
-<li><strong>mapper - namespace</strong></li>
-<li>cache - 配置给定命名空间的缓存</li>
-<li>cache-ref – 从其他命名空间引用缓存配置</li>
-<li><strong>resultMap用来描述数据库结果集和对象的对应关系</strong></li>
-<li>sql – 可以重用的SQL块，也可以被其他语句引用</li>
-<li><strong>insert – 映射插入语句</strong></li>
-<li><strong>update – 映射更新语句</strong></li>
-<li><strong>delete – 映射删除语句</strong></li>
-<li><strong>select – 映射查询语句</strong></li>
+</li>
+<li>AOP的底层实现：<ul>
+<li>使用JDK动态代理实现。</li>
+<li>使用cglib来实现</li>
 </ul>
-<h2 id="2-实际开发中mapper-xml的编写"><a href="#2-实际开发中mapper-xml的编写" class="headerlink" title="2 实际开发中mapper.xml的编写"></a>2 实际开发中mapper.xml的编写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper SYSTEM &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot; &gt;</span><br><span class="line">&lt;!-- namespace与其对应的接口名一致 --&gt;</span><br><span class="line">&lt;mapper namespace&#x3D;&quot;com.dr.mapper.UserMapper&quot;&gt;</span><br><span class="line">	&lt;!-- 一对一关系用association 主键id必须要写，其余可在config用settings标签配置 --&gt;</span><br><span class="line">	&lt;resultMap type&#x3D;&quot;User&quot; id&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;id&quot; &#x2F;&gt;</span><br><span class="line">		&lt;!-- 数据库中列名重复时，需要起别名来映射 --&gt;</span><br><span class="line">		&lt;association property&#x3D;&quot;role&quot; javaType&#x3D;&quot;Role&quot;&gt;</span><br><span class="line">			&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;rid&quot; &#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;association&gt;</span><br><span class="line">	&lt;&#x2F;resultMap&gt;</span><br><span class="line">	&lt;!-- resultMap和resultType参数都是map --&gt;</span><br><span class="line">	&lt;!-- 查询所有用户信息 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;selectAll&quot; resultType&#x3D;&quot;User&quot;&gt;</span><br><span class="line">		select * from smbms_user</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 查询用户个数 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;selectCount&quot; resultType&#x3D;&quot;Integer&quot;&gt;</span><br><span class="line">		select count(*) from</span><br><span class="line">		smbms_user</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 返回对象，若对象属性与数据库一一对应，则resultType，否则resultMap自定义映射属性字段 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy1&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.id</span><br><span class="line">		rid,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and</span><br><span class="line">		userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;userName&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;userRole&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 传来多个参数,只能用下标来表示参数0开始 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy2&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;0&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;1&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 传入多个参数,参数通过@param(&quot;userName&quot;)进行注解 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy3&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;userName&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;userRole&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 传入map集合&lt;key,value&gt;,占位符写#&#123;key&#125; --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy4&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;userName&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;userRole&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 添加用户信息 --&gt;</span><br><span class="line">	&lt;insert id&#x3D;&quot;addUser&quot; parameterType&#x3D;&quot;User&quot;&gt;</span><br><span class="line">		INSERT INTO</span><br><span class="line">		smbms_user(</span><br><span class="line">		userCode,userName,</span><br><span class="line">		userPassword,gender,</span><br><span class="line">		birthday,phone,address,</span><br><span class="line">		userRole,createdBy,</span><br><span class="line">		creationDate,modifyBy,</span><br><span class="line">		modifyDate)</span><br><span class="line">		VALUES(</span><br><span class="line">		#&#123;userCode&#125;,#&#123;userName&#125;,</span><br><span class="line">		#&#123;userPassword&#125;,#&#123;gender&#125;,</span><br><span class="line">		#&#123;birthday&#125;,#&#123;phone&#125;,</span><br><span class="line">		#&#123;address&#125;,#&#123;userRole&#125;,</span><br><span class="line">		#&#123;createdBy&#125;,#&#123;creationDate&#125;,</span><br><span class="line">		#&#123;modifyBy&#125;,#&#123;modifyDate&#125;</span><br><span class="line">		)</span><br><span class="line">	&lt;&#x2F;insert&gt;</span><br><span class="line">	&lt;!-- 修改用户密码 --&gt;</span><br><span class="line">	&lt;update id&#x3D;&quot;updateUser&quot; parameterType&#x3D;&quot;User&quot;&gt;</span><br><span class="line">		UPDATE</span><br><span class="line">		smbms_user</span><br><span class="line">		SET</span><br><span class="line">		userPassword &#x3D; #&#123;userPassword&#125;</span><br><span class="line">		WHERE</span><br><span class="line">		id &#x3D; #&#123;id&#125;;</span><br><span class="line">	&lt;&#x2F;update&gt;</span><br><span class="line">	&lt;!-- 删除用户信息 --&gt;</span><br><span class="line">	&lt;delete id&#x3D;&quot;deleteUser&quot; parameterType&#x3D;&quot;Integer&quot;&gt;</span><br><span class="line">		DELETE</span><br><span class="line">		FROM smbms_user</span><br><span class="line">		WHERE</span><br><span class="line">		id &#x3D; #&#123;i&#125;;</span><br><span class="line">	&lt;&#x2F;delete&gt;</span><br><span class="line">&lt;&#x2F;mapper&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-mapper动态代理开发的四大原则"><a href="#3-mapper动态代理开发的四大原则" class="headerlink" title="3 mapper动态代理开发的四大原则"></a>3 mapper动态代理开发的四大原则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">	&#x2F;&#x2F;1.方法名要与mapper.xml中的sql语句id一致</span><br><span class="line">	&#x2F;&#x2F;2.方法参数要与mapper.xml中的parameterType一致</span><br><span class="line">	&#x2F;&#x2F;3.返回值要与resultType一致</span><br><span class="line">	&#x2F;&#x2F;4.mapper.xml的namespace应为该接口的全包名</span><br><span class="line">package com.dr.mapper;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">import org.apache.ibatis.annotations.Param;</span><br><span class="line"></span><br><span class="line">import com.dr.entity.User;</span><br><span class="line"></span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line">	public List&lt;User&gt; selectAll();</span><br><span class="line"></span><br><span class="line">	public int selectCount();</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 条件查询4种传参方式</span><br><span class="line">	public List&lt;User&gt; getUserListBy1(User user);</span><br><span class="line"></span><br><span class="line">	public List&lt;User&gt; getUserListBy2(String userName, Integer userRole);</span><br><span class="line"></span><br><span class="line">	public List&lt;User&gt; getUserListBy3(@Param(&quot;userName&quot;) String userName, @Param(&quot;userRole&quot;) Integer userRole);</span><br><span class="line"></span><br><span class="line">	public List&lt;User&gt; getUserListBy4(Map map);</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 添加</span><br><span class="line">	public int addUser(User user);</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 修改</span><br><span class="line">	public int updateUser(User user);</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 删除</span><br><span class="line">	public int deleteUser(Integer id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-parameterType"><a href="#4-parameterType" class="headerlink" title="4 parameterType"></a>4 parameterType</h2><ul>
-<li><p>基础数据类型</p>
+</li>
+</ul>
+<a id="more"></a>
+<h1 id="2-AOP的优点"><a href="#2-AOP的优点" class="headerlink" title="2 AOP的优点"></a>2 AOP的优点</h1><ul>
+<li>业务模块更简洁，只包含核心业务代码</li>
+<li>公共功能代码不分散，便于维护和升级</li>
+</ul>
+<h1 id="3-AOP术语"><a href="#3-AOP术语" class="headerlink" title="3 AOP术语"></a>3 AOP术语</h1><ul>
+<li>横切关注点<ul>
+<li>从每个方法中抽取出来的同一类非核心业务。（公共功能部分）</li>
+</ul>
+</li>
+<li>切面(Aspect)<ul>
+<li>封装横切关注点信息的类，每个关注点体现为一个通知方法。</li>
+</ul>
+</li>
+<li>通知(Advice)<ul>
+<li>切面必须要完成的各个具体工作</li>
+</ul>
+</li>
+<li>目标(Target)<ul>
+<li>被通知的对象</li>
+</ul>
+</li>
+<li>织入(Weaving)<ul>
+<li>是把增强应用到目标的过程，把advice应用到target的过程</li>
+</ul>
+</li>
+<li>代理(Proxy)<ul>
+<li>向目标对象应用通知之后创建的代理对象</li>
+</ul>
+</li>
+<li>连接点(Joinpoint)<ul>
+<li>横切关注点在程序代码中的具体体现，对应程序执行的某个特定位置。例如：类某个方法调用前、调用后、方法捕获到异常后，最终。</li>
+</ul>
+</li>
+<li>切入点(pointcut)<ul>
+<li>定位连接点的方式。（切入点表达式）</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-AspectJ"><a href="#4-AspectJ" class="headerlink" title="4 AspectJ"></a>4 AspectJ</h1><p>AspectJ：Java社区里最完整最流行的AOP框架。<br>在Spring2.0以上版本中，可以使用基于AspectJ注解或基于XML配置的AOP。</p>
+<h3 id="4-1-用AspectJ注解声明切面"><a href="#4-1-用AspectJ注解声明切面" class="headerlink" title="4.1 用AspectJ注解声明切面"></a>4.1 用AspectJ注解声明切面</h3><ul>
+<li>要在Spring中声明AspectJ切面，只需要在IOC容器中将切面声明为bean实例。</li>
+<li>当在Spring IOC容器中初始化AspectJ切面之后，Spring IOC容器就会为那些与 AspectJ切面相匹配的bean创建代理。</li>
+<li>在AspectJ注解中，切面只是一个带有@Aspect注解的Java类，它往往要包含很多通知。</li>
+<li>通知是标注有某种注解的简单的Java方法。</li>
+<li>AspectJ支持5种类型的通知注解：<ul>
+<li>@Before：前置通知，在方法执行之前执行(<strong>前置增强</strong>)</li>
+<li>@After：后置通知，在方法执行之后执行(<strong>最终增强</strong>)</li>
+<li>@AfterRunning：返回通知，在方法返回结果之后执行(<strong>后置增强</strong>)</li>
+<li>@AfterThrowing：异常通知，在方法抛出异常之后执行(<strong>异常抛出增强</strong>)</li>
+<li>@Around：环绕通知，包含前面四种(<strong>环绕增强</strong>)</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-AOP的配置"><a href="#5-AOP的配置" class="headerlink" title="5 AOP的配置"></a>5 AOP的配置</h1><ul>
+<li>导入所需的jar包<ul>
+<li>aopalliance-1.0.jar</li>
+<li>aspectjweaver-1.6.9.jar</li>
+<li>spring-aop-5.0.8.RELEASE.jar</li>
+<li>spring-aspects-5.0.8.RELEASE.jar</li>
+</ul>
+</li>
+</ul>
+<p><strong>主流：AOP注解配置</strong></p>
 <ul>
-<li>int、String、Date等</li>
-<li>只能传入一个，通过#{参数名}即可获取传入的值</li>
+<li>applicationContext.xml配置 </li>
 </ul>
-</li>
-<li><p>复杂数据类型</p>
-<ul>
-<li>Java实体类、Map等</li>
-<li>通过#{属性名}或者#{map的keyName}即可获取传入值</li>
-</ul>
-</li>
-<li><p>select,insert,update,delete标签均有此属性</p>
-</li>
-</ul>
-<h2 id="5-resultMap与resultType"><a href="#5-resultMap与resultType" class="headerlink" title="5 resultMap与resultType"></a>5 resultMap与resultType</h2><ul>
-<li><p>描述如何将结果集映射到Java对象</p>
-</li>
-<li><p>resultType ：直接表示返回类型</p>
-<ul>
-<li>基本数据类型</li>
-<li>引用数据类型</li>
-</ul>
-</li>
-<li><p>resultMap ：对外部resultMap的引用</p>
-<ul>
-<li>应用场景：<ul>
-<li>数据库字段信息与对象属性不一致</li>
-<li>复杂的联合查询，自由控制映射结果</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>二者不能同时存在，本质上都是Map数据结构</p>
-</li>
-<li><p>只有select标签有此属性；insert,update,delete标签没有</p>
-</li>
-</ul>
-<h2 id="6-resultMap自动映射"><a href="#6-resultMap自动映射" class="headerlink" title="6 resultMap自动映射"></a>6 resultMap自动映射</h2><p><strong>++在config.xml中进行配置++</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;-- NONE禁止自动匹配，若mapper不手动映射则全为null --&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">&lt;setting name&#x3D;&quot;autoMappingBehavior&quot; value&#x3D;&quot;NONE&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br><span class="line"></span><br><span class="line">&lt;-- PARTIAL默认自动匹配，但不支持嵌套查询多表连接 --&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">&lt;setting name&#x3D;&quot;autoMappingBehavior&quot; value&#x3D;&quot;PARTIAL&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;-- FULL自动匹配，支持嵌套查询多表连接 --&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">&lt;setting name&#x3D;&quot;autoMappingBehavior&quot; value&#x3D;&quot;FULL&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-association"><a href="#7-association" class="headerlink" title="7 association"></a>7 association</h2><ul>
-<li>复杂的类型关联：一对一</li>
-<li>内部嵌套<ul>
-<li>映射一个嵌套JavaBean属性（一个实体类有私有属性为另一个实体类，即可以访问它的属性）<br>Eg：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;User的私有属性</span><br><span class="line">private Role role;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>属性<ul>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>javaType：完整Java类名或者别名</li>
-<li>resultMap：引用外部resultMap</li>
-</ul>
-</li>
-<li>子元素<ul>
-<li>id</li>
-<li>result</li>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>column：数据库列名或者别名</li>
-</ul>
-</li>
-</ul>
-<h2 id="8-collection"><a href="#8-collection" class="headerlink" title="8 collection"></a>8 collection</h2><ul>
-<li>复杂类型集合：一对多</li>
-<li>内部嵌套<ul>
-<li>映射一个嵌套结果集到一个列表（一个实体类中有私有属性为<strong>List&lt;++另一个实体类++&gt;</strong> 所以可以获取多个信息）<br>Eg：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   &#x2F;&#x2F;Provider的私有属性</span><br><span class="line">private List&lt;Bill&gt; billList;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   &lt;!-- 扫描包，让Spring管理 --&gt;</span><br><span class="line">&lt;context:component-scan</span><br><span class="line">	base-package&#x3D;&quot;com.dr.service,com.dr.dao,com.dr.aop&quot; &#x2F;&gt;</span><br><span class="line">&lt;!-- 要想实现切面，一定要引入aop包进行扫描 --&gt;</span><br><span class="line">&lt;!-- 实现aop自动代理 --&gt;</span><br><span class="line">&lt;aop:aspectj-autoproxy &#x2F;&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>属性<ul>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>ofType：完整Java类名或者别名(集合所包括的类型)</li>
-<li>resultMap：引用外部resultMap</li>
+<li>编写切面类并进行注解</li>
 </ul>
-</li>
-<li>子元素<ul>
-<li>id</li>
-<li>result</li>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>column：数据库列名或者别名</li>
-</ul>
-</li>
-</ul>
-<h2 id="9-提高结果映射的可重用性"><a href="#9-提高结果映射的可重用性" class="headerlink" title="9 提高结果映射的可重用性"></a>9 提高结果映射的可重用性</h2><ul>
-<li>调用方式</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type&#x3D;&quot;Role&quot; id&#x3D;&quot;rolelist&quot;&gt;</span><br><span class="line">	&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;rid&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;resultMap&gt;</span><br><span class="line">&lt;resultMap type&#x3D;&quot;User&quot; id&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">	&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;id&quot; &#x2F;&gt;</span><br><span class="line">	&lt;!-- 数据库中列名重复时，需要起别名来映射 --&gt;</span><br><span class="line">	&lt;association property&#x3D;&quot;role&quot; javaType&#x3D;&quot;Role&quot; resultMap&#x3D;&quot;rolelist&quot;&gt;</span><br><span class="line">		&lt;!-- &lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;rid&quot; &#x2F;&gt; --&gt;</span><br><span class="line">	&lt;&#x2F;association&gt;</span><br><span class="line">&lt;&#x2F;resultMap&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.aop;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import org.apache.log4j.Logger;</span><br><span class="line">import org.aspectj.lang.JoinPoint;</span><br><span class="line">import org.aspectj.lang.ProceedingJoinPoint;</span><br><span class="line">import org.aspectj.lang.annotation.AfterReturning;</span><br><span class="line">import org.aspectj.lang.annotation.AfterThrowing;</span><br><span class="line">import org.aspectj.lang.annotation.Around;</span><br><span class="line">import org.aspectj.lang.annotation.Aspect;</span><br><span class="line">import org.aspectj.lang.annotation.Before;</span><br><span class="line">import org.aspectj.lang.annotation.Pointcut;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;AOP基于IOC</span><br><span class="line">&#x2F;*声明为组件，让spring 自动管理,实例化*&#x2F;</span><br><span class="line">@Component</span><br><span class="line">&#x2F;* 声明该类为切面bean *&#x2F;</span><br><span class="line">@Aspect</span><br><span class="line">public class UserServiceLogger &#123;</span><br><span class="line">	Logger logger &#x3D; Logger.getLogger(UserServiceLogger.class);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;定义重用切入点</span><br><span class="line">	@Pointcut(&quot;execution(public int *..UserServiceImpl.addUser(..))&quot;)</span><br><span class="line">	public void pc() &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 前置增强</span><br><span class="line">	&#x2F;**</span><br><span class="line">	 * @Before:将方法指定为前置通知 必须设置value，其值为切入点表达式（你要切入的方法）</span><br><span class="line">	 * @param jp</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	@Before(&quot;pc()&quot;)</span><br><span class="line">	public void before(JoinPoint jp) &#123;</span><br><span class="line">		logger.info(&quot;前置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法入参：&quot;</span><br><span class="line">				+ Arrays.toString(jp.getArgs()));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 后置增强</span><br><span class="line">	@AfterReturning(pointcut &#x3D; &quot;pc()&quot;, returning &#x3D; &quot;result&quot;)</span><br><span class="line">	public void afterReturning(JoinPoint jp, Object result) &#123;</span><br><span class="line">		logger.info(&quot;后置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法返回值：&quot; + result);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 异常抛出增强</span><br><span class="line">	@AfterThrowing(pointcut &#x3D; &quot;pc()&quot;, throwing &#x3D; &quot;e&quot;)</span><br><span class="line">	public void afterThrowing(JoinPoint jp, Exception e) &#123;</span><br><span class="line">		logger.info(&quot;异常增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。异常信息：&quot; + e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 环绕增强</span><br><span class="line">	@Around(&quot;pc()&quot;)</span><br><span class="line">	public Object around(ProceedingJoinPoint jp) &#123;</span><br><span class="line">		logger.info(&quot;前置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法入参：&quot;</span><br><span class="line">				+ Arrays.toString(jp.getArgs()));</span><br><span class="line">		try &#123;</span><br><span class="line">			&#x2F;&#x2F; 执行被代理的方法也就是目标方法</span><br><span class="line">			Object o &#x3D; jp.proceed();</span><br><span class="line">			logger.info(&quot;后置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法返回值：&quot; + o);</span><br><span class="line">			&#x2F;&#x2F; 返回目标方法的执行结果，否则报错空指针异常</span><br><span class="line">			return o;</span><br><span class="line">		&#125; catch (Throwable e) &#123;</span><br><span class="line">			logger.info(</span><br><span class="line">					&quot;异常增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。异常信息：&quot; + e.getMessage());</span><br><span class="line">			return null;</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			logger.info(&quot;最终增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。执行完毕&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="10-Mybatis缓存"><a href="#10-Mybatis缓存" class="headerlink" title="10 Mybatis缓存"></a>10 Mybatis缓存</h2><ul>
-<li>一级缓存是SqlSession级别的缓存。在操作数据库时需要构造 sqlSession对象，在对象中有一个(内存区域)数据结构（HashMap）用于存储缓存数据。不同的sqlSession之间的缓存数据区域（HashMap）是互相不影响的。</li>
-</ul>
-<ul>
-<li>一级缓存的作用域是同一个SqlSession，++在同一个sqlSession中两次执行相同的sql语句，第一次执行完毕会将数据库中查询的数据写到缓存（内存），第二次会从缓存中获取数据将不再从数据库查询，从而提高查询效率++。当一个sqlSession结束后该sqlSession中的一级缓存也就不存在了。<strong>Mybatis默认开启一级缓存。</strong></li>
-</ul>
-<ul>
-<li><strong>一级缓存的工作原理</strong></li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20150726164134583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="image"></p>
-<pre><code>- 第一次发起查询用户id为1的用户信息，先去找缓存中是否有id为1的用户信息，如果没有，从数据库查询用户信息。
 
-- 得到用户信息，将用户信息存储到一级缓存中。
+<h1 id="6-五大通知"><a href="#6-五大通知" class="headerlink" title="6 五大通知"></a>6 五大通知</h1><ul>
+<li>通知<ul>
+<li>在具体的连接点上要执行的操作。</li>
+<li>一个切面可以包括一个或者多个通知。</li>
+<li>通知所使用的注解的值往往是切入点表达式。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>前置通知(<strong>前置增强</strong>)</p>
+<ul>
+<li>前置通知：在方法执行之前执行的通知</li>
+<li>使用@Before注解</li>
+</ul>
+</li>
+<li><p>后置通知(<strong>最终增强</strong>)</p>
+<ul>
+<li>后置通知：后置通知是在连接点完成之后执行的，即连接点返回结果或者抛出异常的时候</li>
+<li>使用@After注解</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>返回通知(<strong>后置增强</strong>)<ul>
+<li>返回通知：无论连接点是正常返回还是抛出异常，后置通知都会执行。如果只想在连接点返回的时候记录日志，应使用返回通知代替后置通知。</li>
+<li>使用@AfterReturning注解,在返回通知中访问连接点的返回值<ul>
+<li>在返回通知中，只要将returning属性添加到@AfterReturning注解中，就可以访问连接点的返回值。该属性的值即为用来传入返回值的参数名称</li>
+<li>必须在通知方法的签名中添加一个同名参数。在运行时Spring AOP会通过这个参数传递返回值</li>
+<li>原始的切点表达式需要出现在pointcut属性中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>异常通知(<strong>异常抛出增强</strong>)<ul>
+<li>异常通知：只在连接点抛出异常时才执行异常通知</li>
+<li>将throwing属性添加到@AfterThrowing注解中，也可以访问连接点抛出的异常。Throwable是所有错误和异常类的顶级父类，所以在异常通知方法可以捕获到任何错误和异常。</li>
+<li>如果只对某种特殊的异常类型感兴趣，可以将参数声明为其他异常的参数类型。然后通知就只在抛出这个类型及其子类的异常时才被执行。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>环绕通知(<strong>环绕增强</strong>)<ul>
+<li>环绕通知是所有通知类型中功能最为强大的，能够全面地控制连接点，甚至可以控制是否执行连接点。</li>
+<li>对于环绕通知来说，连接点的参数类型必须是ProceedingJoinPoint。它是 JoinPoint的子接口，允许控制何时执行，是否执行连接点。</li>
+<li>在环绕通知中需要明确调用ProceedingJoinPoint的proceed()方法来执行被代理的方法。如果忘记这样做就会导致通知被执行了，但目标方法没有被执行。</li>
+<li>注意：环绕通知的方法需要返回目标方法执行之后的结果，即调用 joinPoint.proceed();的返回值，否则会出现空指针异常。</li>
+</ul>
+</li>
+</ul>
+<h1 id="在XML中配置AOP"><a href="#在XML中配置AOP" class="headerlink" title="在XML中配置AOP"></a>在XML中配置AOP</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置切面类 --&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;userServiceLogger&quot; class&#x3D;&quot;com.dr.aop.UserServiceLogger&quot;&gt;&lt;&#x2F;bean&gt;</span><br><span class="line">&lt;!-- 进行AOP配置 --&gt;</span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">	&lt;aop:pointcut</span><br><span class="line">		expression&#x3D;&quot;execution(public int</span><br><span class="line">		addUser(com.dr.bean.User))&quot;</span><br><span class="line">		id&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">	&lt;aop:aspect ref&#x3D;&quot;userServiceLogger&quot;&gt;</span><br><span class="line">		&lt;aop:before method&#x3D;&quot;before&quot; pointcut-ref&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:after-returning method&#x3D;&quot;afterReturning&quot;</span><br><span class="line">			pointcut-ref&#x3D;&quot;pc&quot; returning&#x3D;&quot;result&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:after-throwing method&#x3D;&quot;afterThrowing&quot;</span><br><span class="line">			pointcut-ref&#x3D;&quot;pc&quot; throwing&#x3D;&quot;e&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:around method&#x3D;&quot;around&quot; pointcut-ref&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;aop:aspect&gt;</span><br><span class="line">&lt;&#x2F;aop:config&gt;</span><br></pre></td></tr></table></figure>
 
-- 如果sqlSession去执行commit操作（执行插入、更新、删除），清空SqlSession中的一级缓存，这样做的目的为了让缓存中存储的是最新的信息，**避免脏读**。
-
-- 第二次发起查询用户id为1的用户信息，先去找缓存中是否有id为1的用户信息，缓存中有，直接从缓存中获取用户信息。</code></pre><hr>
-<ul>
-<li>二级缓存是mapper级别的缓存，多个SqlSession去操作同一个Mapper的sql语句，多个SqlSession去操作数据库得到数据会存在二级缓存区域，多个SqlSession可以共用二级缓存，二级缓存是跨SqlSession的。</li>
-</ul>
-<ul>
-<li><p>二级缓存是多个SqlSession共享的，其作用域是mapper的同一个namespace，不同的sqlSession两次执行相同namespace下的sql语句且向sql中传递参数也相同即最终执行相同的sql语句，第一次执行完毕会将数据库中查询的数据写到缓存（内存），第二次会从缓存中获取数据将不再从数据库查询，从而提高查询效率。<strong>Mybatis默认没有开启二级缓存需要在setting全局参数中配置开启二级缓存。</strong></p>
-</li>
-<li><p><strong>二级缓存工作原理</strong></p>
-<ul>
-<li><p>首先开启mybatis的二级缓存<br><img src="https://img-blog.csdn.net/20150726164234783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="image"></p>
-</li>
-<li><p>sqlSession1去查询用户id为1的用户信息，查询到用户信息会将查询数据存储到二级缓存中。</p>
-</li>
-<li><p>如果SqlSession3去执行相同mapper下sql，执行commit提交，清空该mapper下的二级缓存区域的数据。</p>
-</li>
-<li><p>sqlSession2去查询用户id为1的用户信息，去缓存中找是否存在数据，如果存在直接从缓存中取出数据。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="二级缓存与一级缓存区别"><a href="#二级缓存与一级缓存区别" class="headerlink" title="二级缓存与一级缓存区别"></a>二级缓存与一级缓存区别</h2><ul>
-<li>二级缓存的范围更大，多个sqlSession可以共享一个UserMapper的二级缓存区域。数据类型仍然为HashMap</li>
-</ul>
-<ul>
-<li><p>UserMapper有一个二级缓存区域（<strong>按namespace分，如果namespace相同则使用同一个相同的二级缓存区</strong>），其它mapper也有自己的二级缓存区域（按namespace分）。</p>
-</li>
-<li><p>二级缓存开启方式：（代码）</p>
-<ol>
-<li><p>在核心配置文件SqlMapConfig.xml中加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 全局配置参数，需要时再设置 --&gt;</span><br><span class="line"></span><br><span class="line"> &lt;settings&gt;</span><br><span class="line"></span><br><span class="line"> &lt;!-- 开启二级缓存 默认值为true --&gt;</span><br><span class="line"></span><br><span class="line"> &lt;setting name&#x3D;&quot;cacheEnabled&quot; value&#x3D;&quot;true&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line"> &lt;&#x2F;settings&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>在UserMapper.xml中开启二缓存，UserMapper.xml下的sql执行完成会存储到它的缓存区域（HashMap）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 开启本mapper namespace下的二级缓存 --&gt;</span><br><span class="line">&lt;cache eviction&#x3D;&quot;FIFO&quot; flushInterval&#x3D;&quot;60000&quot; size&#x3D;&quot;512&quot; readOnly&#x3D;&quot;true&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>调用pojo类实现序列化接口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F;Serializable实现序列化，为了将来反序列化</span><br><span class="line">public class User implements Serializable&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>二级缓存需要查询结果映射的pojo对象实现java.io.Serializable接口实现序列化和反序列化操作，注意如果存在父类、成员pojo都需要实现序列化接口。</li>
-<li>pojo类实现序列化接口是为了将缓存数据取出执行反序列化操作，因为二级缓存数据存储介质多种多样，不一定在内存有可能是硬盘或者远程服务器。</li>
-</ul>
-</li>
-</ul>
 
     
 
@@ -400,7 +398,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://drnoobw.github.io/2020/04/04/SQL映射文件/" title="SQL映射文件" target="_blank">https://drnoobw.github.io/2020/04/04/SQL映射文件/</a>
+          <a href="https://drnoobw.github.io/2020/02/04/Spring的AOP/" title="AOP" target="_blank">https://drnoobw.github.io/2020/02/04/Spring的AOP/</a>
         </li>
         
         <li>
@@ -417,6 +415,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -467,7 +476,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://drnoobw.github.io/2020/04/04/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://drnoobw.github.io/2020/02/04/Spring%E7%9A%84AOP/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -482,18 +491,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/04/%E5%8A%A8%E6%80%81SQL/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/04/Sping%E7%9A%84IOC/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          动态SQL
+          IOC
         
       </div>
     </a>
   
   
-    <a href="/2020/04/04/Mybatis%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mybatis搭建过程</div>
+    <a href="/2020/02/04/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring的事务</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -512,6 +521,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-AOP概述"><span class="toc-number">1.</span> <span class="toc-text">1 AOP概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-AOP的优点"><span class="toc-number">2.</span> <span class="toc-text">2 AOP的优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-AOP术语"><span class="toc-number">3.</span> <span class="toc-text">3 AOP术语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-AspectJ"><span class="toc-number">4.</span> <span class="toc-text">4 AspectJ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-用AspectJ注解声明切面"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1 用AspectJ注解声明切面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-AOP的配置"><span class="toc-number">5.</span> <span class="toc-text">5 AOP的配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-五大通知"><span class="toc-number">6.</span> <span class="toc-text">6 五大通知</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在XML中配置AOP"><span class="toc-number">7.</span> <span class="toc-text">在XML中配置AOP</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -628,6 +650,14 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -766,6 +796,66 @@
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
   
+    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  /**
+   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+   */
+  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
+  //特定的模型json文件名称
+  var modelPathJson = {
+    "epsilon2_1": "Epsilon2.1",
+    "gf": "Gantzert_Felixander",
+    "haru/01": "haru01",
+    "haru/02": "haru02",
+    "nietzsche": "nietzche"
+  }
+
+  
+    var modelName = "hibiki";
+  
+
+  var modelJsonPath = "";
+  if (modelPathJson[modelName]) {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+      ".model.json";
+  } else {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+  }
+  L2Dwidget.init({
+    model: {
+      jsonPath: modelJsonPath
+    },
+    display: {
+       position: "left", 
+       width: 145, 
+       height: 315, 
+       hOffset: 50, 
+      
+    },
+    mobile: {
+       show: false, 
+       scale: 0.6 
+    },
+    react: {
+       opacity: 0.8 
+    }
+  })
+
+</script>
+
+  
+  
+  <script type="text/javascript" src="/lib/snow.js"></script>
+  <script type="text/javascript" src="/lib/jquery-2.1.4.min.js"></script>
+  <script>
+    snow.down();
+    $(window).resize(function() {
+      $("canvas").css("z-index","500").remove();
+      snow.down();
+    });
+  </script>
   
 </body>
 
