@@ -6,21 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://drnoobw.github.io">
-  <title>Hexo</title>
+  <title>动态SQL | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <!-- <meta name="keywords" content="">
-    <meta name="description" content=""> -->
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://drnoobw.github.io/index.html">
+  <meta name="description" content="目标 掌握通过SQL映射文件进行增删改查 掌握参数的使用 掌握resultMap 了解Cache的使用  1 SQL映射文件的几个顶级元素(按照定义的顺序) mapper - namespace cache - 配置给定命名空间的缓存 cache-ref – 从其他命名空间引用缓存配置 resultMap用来描述数据库结果集和对象的对应关系 sql – 可以重用的SQL块，也可以被其他语句引用 i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态SQL">
+<meta property="og:url" content="https://drnoobw.github.io/2020/04/04/%E5%8A%A8%E6%80%81SQL/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目标 掌握通过SQL映射文件进行增删改查 掌握参数的使用 掌握resultMap 了解Cache的使用  1 SQL映射文件的几个顶级元素(按照定义的顺序) mapper - namespace cache - 配置给定命名空间的缓存 cache-ref – 从其他命名空间引用缓存配置 resultMap用来描述数据库结果集和对象的对应关系 sql – 可以重用的SQL块，也可以被其他语句引用 i">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdn.net/20150726164134583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20150726164234783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="article:published_time" content="2020-04-04T10:14:49.000Z">
+<meta property="article:modified_time" content="2020-04-04T10:14:59.752Z">
 <meta property="article:author" content="DR">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20150726164134583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,19 +158,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-动态SQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-动态SQL" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/04/%E5%8A%A8%E6%80%81SQL/" target="_blank">动态SQL</a>
-  
+    <h1 class="article-title" itemprop="name">
+      动态SQL
     </h1>
   
 
@@ -360,7 +358,59 @@
     
 
     
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weichat.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          DR
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://drnoobw.github.io/2020/04/04/动态SQL/" title="动态SQL" target="_blank">https://drnoobw.github.io/2020/04/04/动态SQL/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
     
 
   </div>
@@ -370,16 +420,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/04/%E5%8A%A8%E6%80%81SQL/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://drnoobw.github.io/2020/04/04/%E5%8A%A8%E6%80%81SQL/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/04/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SQL映射文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -400,1137 +510,14 @@
 
 
 
-  
-    <article id="post-SQL映射文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/04/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" target="_blank">SQL映射文件</a>
-  
-    </h1>
-  
 
 
-  
-  
-<a href="/2020/04/04/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" class="archive-article-date">
-        <time datetime="2020-04-04T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
 
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul>
-<li>掌握通过SQL映射文件进行增删改查</li>
-<li>掌握参数的使用</li>
-<li>掌握resultMap</li>
-<li>了解Cache的使用</li>
-</ul>
-<h2 id="1-SQL映射文件的几个顶级元素-按照定义的顺序"><a href="#1-SQL映射文件的几个顶级元素-按照定义的顺序" class="headerlink" title="1 SQL映射文件的几个顶级元素(按照定义的顺序)"></a>1 SQL映射文件的几个顶级元素(按照定义的顺序)</h2><ul>
-<li><strong>mapper - namespace</strong></li>
-<li>cache - 配置给定命名空间的缓存</li>
-<li>cache-ref – 从其他命名空间引用缓存配置</li>
-<li><strong>resultMap用来描述数据库结果集和对象的对应关系</strong></li>
-<li>sql – 可以重用的SQL块，也可以被其他语句引用</li>
-<li><strong>insert – 映射插入语句</strong></li>
-<li><strong>update – 映射更新语句</strong></li>
-<li><strong>delete – 映射删除语句</strong></li>
-<li><strong>select – 映射查询语句</strong></li>
-</ul>
-<h2 id="2-实际开发中mapper-xml的编写"><a href="#2-实际开发中mapper-xml的编写" class="headerlink" title="2 实际开发中mapper.xml的编写"></a>2 实际开发中mapper.xml的编写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper SYSTEM &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot; &gt;</span><br><span class="line">&lt;!-- namespace与其对应的接口名一致 --&gt;</span><br><span class="line">&lt;mapper namespace&#x3D;&quot;com.dr.mapper.UserMapper&quot;&gt;</span><br><span class="line">	&lt;!-- 一对一关系用association 主键id必须要写，其余可在config用settings标签配置 --&gt;</span><br><span class="line">	&lt;resultMap type&#x3D;&quot;User&quot; id&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;id&quot; &#x2F;&gt;</span><br><span class="line">		&lt;!-- 数据库中列名重复时，需要起别名来映射 --&gt;</span><br><span class="line">		&lt;association property&#x3D;&quot;role&quot; javaType&#x3D;&quot;Role&quot;&gt;</span><br><span class="line">			&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;rid&quot; &#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;association&gt;</span><br><span class="line">	&lt;&#x2F;resultMap&gt;</span><br><span class="line">	&lt;!-- resultMap和resultType参数都是map --&gt;</span><br><span class="line">	&lt;!-- 查询所有用户信息 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;selectAll&quot; resultType&#x3D;&quot;User&quot;&gt;</span><br><span class="line">		select * from smbms_user</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 查询用户个数 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;selectCount&quot; resultType&#x3D;&quot;Integer&quot;&gt;</span><br><span class="line">		select count(*) from</span><br><span class="line">		smbms_user</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 返回对象，若对象属性与数据库一一对应，则resultType，否则resultMap自定义映射属性字段 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy1&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.id</span><br><span class="line">		rid,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and</span><br><span class="line">		userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;userName&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;userRole&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 传来多个参数,只能用下标来表示参数0开始 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy2&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;0&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;1&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 传入多个参数,参数通过@param(&quot;userName&quot;)进行注解 --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy3&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;userName&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;userRole&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 传入map集合&lt;key,value&gt;,占位符写#&#123;key&#125; --&gt;</span><br><span class="line">	&lt;select id&#x3D;&quot;getUserListBy4&quot; resultMap&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">		select u.*,r.roleName</span><br><span class="line">		from</span><br><span class="line">		smbms_user u,smbms_role r</span><br><span class="line">		where u.userRole &#x3D; r.id</span><br><span class="line">		and userName like</span><br><span class="line">		concat(&#39;%&#39;,#&#123;userName&#125;,&#39;%&#39;)</span><br><span class="line">		and userRole &#x3D; #&#123;userRole&#125;</span><br><span class="line">	&lt;&#x2F;select&gt;</span><br><span class="line">	&lt;!-- 添加用户信息 --&gt;</span><br><span class="line">	&lt;insert id&#x3D;&quot;addUser&quot; parameterType&#x3D;&quot;User&quot;&gt;</span><br><span class="line">		INSERT INTO</span><br><span class="line">		smbms_user(</span><br><span class="line">		userCode,userName,</span><br><span class="line">		userPassword,gender,</span><br><span class="line">		birthday,phone,address,</span><br><span class="line">		userRole,createdBy,</span><br><span class="line">		creationDate,modifyBy,</span><br><span class="line">		modifyDate)</span><br><span class="line">		VALUES(</span><br><span class="line">		#&#123;userCode&#125;,#&#123;userName&#125;,</span><br><span class="line">		#&#123;userPassword&#125;,#&#123;gender&#125;,</span><br><span class="line">		#&#123;birthday&#125;,#&#123;phone&#125;,</span><br><span class="line">		#&#123;address&#125;,#&#123;userRole&#125;,</span><br><span class="line">		#&#123;createdBy&#125;,#&#123;creationDate&#125;,</span><br><span class="line">		#&#123;modifyBy&#125;,#&#123;modifyDate&#125;</span><br><span class="line">		)</span><br><span class="line">	&lt;&#x2F;insert&gt;</span><br><span class="line">	&lt;!-- 修改用户密码 --&gt;</span><br><span class="line">	&lt;update id&#x3D;&quot;updateUser&quot; parameterType&#x3D;&quot;User&quot;&gt;</span><br><span class="line">		UPDATE</span><br><span class="line">		smbms_user</span><br><span class="line">		SET</span><br><span class="line">		userPassword &#x3D; #&#123;userPassword&#125;</span><br><span class="line">		WHERE</span><br><span class="line">		id &#x3D; #&#123;id&#125;;</span><br><span class="line">	&lt;&#x2F;update&gt;</span><br><span class="line">	&lt;!-- 删除用户信息 --&gt;</span><br><span class="line">	&lt;delete id&#x3D;&quot;deleteUser&quot; parameterType&#x3D;&quot;Integer&quot;&gt;</span><br><span class="line">		DELETE</span><br><span class="line">		FROM smbms_user</span><br><span class="line">		WHERE</span><br><span class="line">		id &#x3D; #&#123;i&#125;;</span><br><span class="line">	&lt;&#x2F;delete&gt;</span><br><span class="line">&lt;&#x2F;mapper&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-mapper动态代理开发的四大原则"><a href="#3-mapper动态代理开发的四大原则" class="headerlink" title="3 mapper动态代理开发的四大原则"></a>3 mapper动态代理开发的四大原则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">	&#x2F;&#x2F;1.方法名要与mapper.xml中的sql语句id一致</span><br><span class="line">	&#x2F;&#x2F;2.方法参数要与mapper.xml中的parameterType一致</span><br><span class="line">	&#x2F;&#x2F;3.返回值要与resultType一致</span><br><span class="line">	&#x2F;&#x2F;4.mapper.xml的namespace应为该接口的全包名</span><br><span class="line">package com.dr.mapper;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">import org.apache.ibatis.annotations.Param;</span><br><span class="line"></span><br><span class="line">import com.dr.entity.User;</span><br><span class="line"></span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line">	public List&lt;User&gt; selectAll();</span><br><span class="line"></span><br><span class="line">	public int selectCount();</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 条件查询4种传参方式</span><br><span class="line">	public List&lt;User&gt; getUserListBy1(User user);</span><br><span class="line"></span><br><span class="line">	public List&lt;User&gt; getUserListBy2(String userName, Integer userRole);</span><br><span class="line"></span><br><span class="line">	public List&lt;User&gt; getUserListBy3(@Param(&quot;userName&quot;) String userName, @Param(&quot;userRole&quot;) Integer userRole);</span><br><span class="line"></span><br><span class="line">	public List&lt;User&gt; getUserListBy4(Map map);</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 添加</span><br><span class="line">	public int addUser(User user);</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 修改</span><br><span class="line">	public int updateUser(User user);</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 删除</span><br><span class="line">	public int deleteUser(Integer id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-parameterType"><a href="#4-parameterType" class="headerlink" title="4 parameterType"></a>4 parameterType</h2><ul>
-<li><p>基础数据类型</p>
-<ul>
-<li>int、String、Date等</li>
-<li>只能传入一个，通过#{参数名}即可获取传入的值</li>
-</ul>
-</li>
-<li><p>复杂数据类型</p>
-<ul>
-<li>Java实体类、Map等</li>
-<li>通过#{属性名}或者#{map的keyName}即可获取传入值</li>
-</ul>
-</li>
-<li><p>select,insert,update,delete标签均有此属性</p>
-</li>
-</ul>
-<h2 id="5-resultMap与resultType"><a href="#5-resultMap与resultType" class="headerlink" title="5 resultMap与resultType"></a>5 resultMap与resultType</h2><ul>
-<li><p>描述如何将结果集映射到Java对象</p>
-</li>
-<li><p>resultType ：直接表示返回类型</p>
-<ul>
-<li>基本数据类型</li>
-<li>引用数据类型</li>
-</ul>
-</li>
-<li><p>resultMap ：对外部resultMap的引用</p>
-<ul>
-<li>应用场景：<ul>
-<li>数据库字段信息与对象属性不一致</li>
-<li>复杂的联合查询，自由控制映射结果</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>二者不能同时存在，本质上都是Map数据结构</p>
-</li>
-<li><p>只有select标签有此属性；insert,update,delete标签没有</p>
-</li>
-</ul>
-<h2 id="6-resultMap自动映射"><a href="#6-resultMap自动映射" class="headerlink" title="6 resultMap自动映射"></a>6 resultMap自动映射</h2><p><strong>++在config.xml中进行配置++</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;-- NONE禁止自动匹配，若mapper不手动映射则全为null --&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">&lt;setting name&#x3D;&quot;autoMappingBehavior&quot; value&#x3D;&quot;NONE&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br><span class="line"></span><br><span class="line">&lt;-- PARTIAL默认自动匹配，但不支持嵌套查询多表连接 --&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">&lt;setting name&#x3D;&quot;autoMappingBehavior&quot; value&#x3D;&quot;PARTIAL&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;-- FULL自动匹配，支持嵌套查询多表连接 --&gt;</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">&lt;setting name&#x3D;&quot;autoMappingBehavior&quot; value&#x3D;&quot;FULL&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;settings&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="7-association"><a href="#7-association" class="headerlink" title="7 association"></a>7 association</h2><ul>
-<li>复杂的类型关联：一对一</li>
-<li>内部嵌套<ul>
-<li>映射一个嵌套JavaBean属性（一个实体类有私有属性为另一个实体类，即可以访问它的属性）<br>Eg：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;User的私有属性</span><br><span class="line">private Role role;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>属性<ul>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>javaType：完整Java类名或者别名</li>
-<li>resultMap：引用外部resultMap</li>
-</ul>
-</li>
-<li>子元素<ul>
-<li>id</li>
-<li>result</li>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>column：数据库列名或者别名</li>
-</ul>
-</li>
-</ul>
-<h2 id="8-collection"><a href="#8-collection" class="headerlink" title="8 collection"></a>8 collection</h2><ul>
-<li>复杂类型集合：一对多</li>
-<li>内部嵌套<ul>
-<li>映射一个嵌套结果集到一个列表（一个实体类中有私有属性为<strong>List&lt;++另一个实体类++&gt;</strong> 所以可以获取多个信息）<br>Eg：</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   &#x2F;&#x2F;Provider的私有属性</span><br><span class="line">private List&lt;Bill&gt; billList;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>属性<ul>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>ofType：完整Java类名或者别名(集合所包括的类型)</li>
-<li>resultMap：引用外部resultMap</li>
-</ul>
-</li>
-<li>子元素<ul>
-<li>id</li>
-<li>result</li>
-<li>property：映射数据库列的实体对象的属性</li>
-<li>column：数据库列名或者别名</li>
-</ul>
-</li>
-</ul>
-<h2 id="9-提高结果映射的可重用性"><a href="#9-提高结果映射的可重用性" class="headerlink" title="9 提高结果映射的可重用性"></a>9 提高结果映射的可重用性</h2><ul>
-<li>调用方式</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;resultMap type&#x3D;&quot;Role&quot; id&#x3D;&quot;rolelist&quot;&gt;</span><br><span class="line">	&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;rid&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;resultMap&gt;</span><br><span class="line">&lt;resultMap type&#x3D;&quot;User&quot; id&#x3D;&quot;userlist&quot;&gt;</span><br><span class="line">	&lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;id&quot; &#x2F;&gt;</span><br><span class="line">	&lt;!-- 数据库中列名重复时，需要起别名来映射 --&gt;</span><br><span class="line">	&lt;association property&#x3D;&quot;role&quot; javaType&#x3D;&quot;Role&quot; resultMap&#x3D;&quot;rolelist&quot;&gt;</span><br><span class="line">		&lt;!-- &lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;rid&quot; &#x2F;&gt; --&gt;</span><br><span class="line">	&lt;&#x2F;association&gt;</span><br><span class="line">&lt;&#x2F;resultMap&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="10-Mybatis缓存"><a href="#10-Mybatis缓存" class="headerlink" title="10 Mybatis缓存"></a>10 Mybatis缓存</h2><ul>
-<li>一级缓存是SqlSession级别的缓存。在操作数据库时需要构造 sqlSession对象，在对象中有一个(内存区域)数据结构（HashMap）用于存储缓存数据。不同的sqlSession之间的缓存数据区域（HashMap）是互相不影响的。</li>
-</ul>
-<ul>
-<li>一级缓存的作用域是同一个SqlSession，++在同一个sqlSession中两次执行相同的sql语句，第一次执行完毕会将数据库中查询的数据写到缓存（内存），第二次会从缓存中获取数据将不再从数据库查询，从而提高查询效率++。当一个sqlSession结束后该sqlSession中的一级缓存也就不存在了。<strong>Mybatis默认开启一级缓存。</strong></li>
-</ul>
-<ul>
-<li><strong>一级缓存的工作原理</strong></li>
-</ul>
-<p><img src="https://img-blog.csdn.net/20150726164134583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="image"></p>
-<pre><code>- 第一次发起查询用户id为1的用户信息，先去找缓存中是否有id为1的用户信息，如果没有，从数据库查询用户信息。
-
-- 得到用户信息，将用户信息存储到一级缓存中。
-
-- 如果sqlSession去执行commit操作（执行插入、更新、删除），清空SqlSession中的一级缓存，这样做的目的为了让缓存中存储的是最新的信息，**避免脏读**。
-
-- 第二次发起查询用户id为1的用户信息，先去找缓存中是否有id为1的用户信息，缓存中有，直接从缓存中获取用户信息。</code></pre><hr>
-<ul>
-<li>二级缓存是mapper级别的缓存，多个SqlSession去操作同一个Mapper的sql语句，多个SqlSession去操作数据库得到数据会存在二级缓存区域，多个SqlSession可以共用二级缓存，二级缓存是跨SqlSession的。</li>
-</ul>
-<ul>
-<li><p>二级缓存是多个SqlSession共享的，其作用域是mapper的同一个namespace，不同的sqlSession两次执行相同namespace下的sql语句且向sql中传递参数也相同即最终执行相同的sql语句，第一次执行完毕会将数据库中查询的数据写到缓存（内存），第二次会从缓存中获取数据将不再从数据库查询，从而提高查询效率。<strong>Mybatis默认没有开启二级缓存需要在setting全局参数中配置开启二级缓存。</strong></p>
-</li>
-<li><p><strong>二级缓存工作原理</strong></p>
-<ul>
-<li><p>首先开启mybatis的二级缓存<br><img src="https://img-blog.csdn.net/20150726164234783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="image"></p>
-</li>
-<li><p>sqlSession1去查询用户id为1的用户信息，查询到用户信息会将查询数据存储到二级缓存中。</p>
-</li>
-<li><p>如果SqlSession3去执行相同mapper下sql，执行commit提交，清空该mapper下的二级缓存区域的数据。</p>
-</li>
-<li><p>sqlSession2去查询用户id为1的用户信息，去缓存中找是否存在数据，如果存在直接从缓存中取出数据。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="二级缓存与一级缓存区别"><a href="#二级缓存与一级缓存区别" class="headerlink" title="二级缓存与一级缓存区别"></a>二级缓存与一级缓存区别</h2><ul>
-<li>二级缓存的范围更大，多个sqlSession可以共享一个UserMapper的二级缓存区域。数据类型仍然为HashMap</li>
-</ul>
-<ul>
-<li><p>UserMapper有一个二级缓存区域（<strong>按namespace分，如果namespace相同则使用同一个相同的二级缓存区</strong>），其它mapper也有自己的二级缓存区域（按namespace分）。</p>
-</li>
-<li><p>二级缓存开启方式：（代码）</p>
-<ol>
-<li><p>在核心配置文件SqlMapConfig.xml中加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 全局配置参数，需要时再设置 --&gt;</span><br><span class="line"></span><br><span class="line"> &lt;settings&gt;</span><br><span class="line"></span><br><span class="line"> &lt;!-- 开启二级缓存 默认值为true --&gt;</span><br><span class="line"></span><br><span class="line"> &lt;setting name&#x3D;&quot;cacheEnabled&quot; value&#x3D;&quot;true&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line"> &lt;&#x2F;settings&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>在UserMapper.xml中开启二缓存，UserMapper.xml下的sql执行完成会存储到它的缓存区域（HashMap）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 开启本mapper namespace下的二级缓存 --&gt;</span><br><span class="line">&lt;cache eviction&#x3D;&quot;FIFO&quot; flushInterval&#x3D;&quot;60000&quot; size&#x3D;&quot;512&quot; readOnly&#x3D;&quot;true&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>调用pojo类实现序列化接口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F;Serializable实现序列化，为了将来反序列化</span><br><span class="line">public class User implements Serializable&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>二级缓存需要查询结果映射的pojo对象实现java.io.Serializable接口实现序列化和反序列化操作，注意如果存在父类、成员pojo都需要实现序列化接口。</li>
-<li>pojo类实现序列化接口是为了将缓存数据取出执行反序列化操作，因为二级缓存数据存储介质多种多样，不一定在内存有可能是硬盘或者远程服务器。</li>
-</ul>
-</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/04/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Mybatis搭建过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/04/Mybatis%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" target="_blank">Mybatis搭建过程</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/04/Mybatis%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-        <time datetime="2020-04-04T09:56:54.895Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <ul>
-<li>1、导入jar</li>
-<li>2、创建mybatis的核心（全局）配置文件mybatis-config.xml，并配置</li>
-<li>3、创建映射文件XxxMapper.xml，并配置</li>
-<li>4、创建mapper接口，实现两个绑定:<ul>
-<li>(1)接口全限定名要和映射文件的namespace保持一致</li>
-<li>(2)接口中方法名和SQL语句的id保持一致</li>
-</ul>
-</li>
-<li>5、获取mybatis操作数据库的会话对象SqlSession，通过getMapper()获取接口的动态代理实现类</li>
-<li>6、测试</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/04/Mybatis%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-初识Mybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/04/%E5%88%9D%E8%AF%86Mybatis/" target="_blank">初识Mybatis</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/04/%E5%88%9D%E8%AF%86Mybatis/" class="archive-article-date">
-        <time datetime="2020-04-04T09:56:40.379Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ul>
-<li>理解数据持久化概念和ORM原理 </li>
-<li>理解MyBatis的概念以及优点特性  </li>
-<li>搭建MyBatis环境  </li>
-<li>了解MyBatis与JDBC的区别与联系  </li>
-<li>理解核心类的作用域和生命周期  </li>
-<li>掌握全局配置文件结构内容</li>
-</ul>
-<h2 id="1-持久化与ORM"><a href="#1-持久化与ORM" class="headerlink" title="1 持久化与ORM"></a>1 持久化与ORM</h2><ul>
-<li>持久化是程序数据在瞬时状态和持久状态间转换的过程<br>（<strong>从内存到外存</strong>）</li>
-<li>ORM <strong>（Object Relational Mapping）</strong><ul>
-<li>编写程序的时候，以面向对象的方式处理数据</li>
-<li>保存数据的时候，却以关系型数据库的方式存储</li>
-</ul>
-</li>
-<li>为什么要用ORM?和JDBC有何不一样?<ul>
-<li>orm是一种思想，就是把object对象转变成数据库中的记录，或者把数据库中的记录转变成object对象，我们可以用jdbc来实现这种思想，orm的思想本质就是建立是JDBC上，对JDBC的一种封装，这种封装可以省去了直接使用jdbc的繁琐细节，提高了开发效率，现在用的较多的ORM工具很多，一般我们公司采用的ORM框架主要有hibernate和MyBatis。当然也听说一些其他orm工具，如toplink,ojb等。</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Mybatis的特点"><a href="#2-Mybatis的特点" class="headerlink" title="2 Mybatis的特点"></a>2 Mybatis的特点</h2><ul>
-<li>基于SQL语法，简单易学</li>
-<li>能了解底层封装过程</li>
-<li>SQL语句封装在配置文件中，便于统一管理与维护，降低程序的耦合度</li>
-<li>方便程序代码调试</li>
-</ul>
-<h2 id="3-使用步骤（环境部署）"><a href="#3-使用步骤（环境部署）" class="headerlink" title="3 使用步骤（环境部署）"></a>3 使用步骤（环境部署）</h2><ul>
-<li>导包</li>
-<li>编写核心配置文件config.xml<ul>
-<li>配置数据库信息和mapper.xml信息 </li>
-</ul>
-</li>
-<li>创建实体类（与数据库表对应）</li>
-<li>创建sql映射文件mapper.xml<ul>
-<li>编写sql语句和方法    </li>
-</ul>
-</li>
-<li>测试<ul>
-<li>通过SqlSessionFactoryBuilder（和字节流）读取核心配置文件mybatis-config.xml</li>
-<li>创建SqlSessionFactory对象，读取配置文件</li>
-<li>创建SqlSession对象</li>
-<li>调用mapper文件进行数据操作</li>
-</ul>
-</li>
-</ul>
-<h2 id="4-优缺点"><a href="#4-优缺点" class="headerlink" title="4 优缺点"></a>4 优缺点</h2><h3 id="4-1-优点"><a href="#4-1-优点" class="headerlink" title="4.1 优点"></a>4.1 优点</h3><ul>
-<li>与JDBC相比，减少了50%以上的代码量</li>
-<li>最简单的持久化框架，小巧并简单易学</li>
-<li>SQL代码从程序代码中彻底分离，可重用</li>
-<li>提供XML标签，支持编写动态SQL</li>
-<li>提供映射标签，支持对象与数据库的ORM字段映射<h3 id="4-2-缺点"><a href="#4-2-缺点" class="headerlink" title="4.2 缺点"></a>4.2 缺点</h3></li>
-<li>SQL语句编写工作量大，对开发人员有一定要求</li>
-<li>数据库移植性差</li>
-</ul>
-<h2 id="5-Mybatis的基本要素"><a href="#5-Mybatis的基本要素" class="headerlink" title="5 Mybatis的基本要素"></a>5 Mybatis的基本要素</h2><ul>
-<li>MyBatis的核心对象<ul>
-<li>SqlSessionFactoryBuilder</li>
-<li>SqlSessionFactory</li>
-<li>SqlSession</li>
-</ul>
-</li>
-<li>mybatis-config.xml 系统核心配置文件</li>
-<li>mapper.xml SQL映射文件</li>
-</ul>
-<h2 id="6-sqlSession的获取"><a href="#6-sqlSession的获取" class="headerlink" title="6 sqlSession的获取"></a>6 sqlSession的获取</h2><h3 id="6-1-代码"><a href="#6-1-代码" class="headerlink" title="6.1 代码"></a>6.1 代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.utils;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStream;</span><br><span class="line">import org.apache.ibatis.io.Resources;</span><br><span class="line">import org.apache.ibatis.session.SqlSession;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line"></span><br><span class="line">public class MyBatisUtil &#123;</span><br><span class="line">	private static SqlSessionFactory factory;</span><br><span class="line"></span><br><span class="line">	static &#123;</span><br><span class="line">		System.out.println(&quot;static factory&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);</span><br><span class="line">		try &#123;</span><br><span class="line">			InputStream is &#x3D; Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);</span><br><span class="line">			factory &#x3D; new SqlSessionFactoryBuilder().build(is);</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static SqlSession createSqlSession() &#123;</span><br><span class="line">		return factory.openSession(false);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void closeSqlSession(SqlSession sqlSession) &#123;</span><br><span class="line">		if (null !&#x3D; sqlSession)</span><br><span class="line">			sqlSession.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-2-SqlSession的两种使用方式"><a href="#6-2-SqlSession的两种使用方式" class="headerlink" title="6.2 SqlSession的两种使用方式"></a>6.2 SqlSession的两种使用方式</h3><ul>
-<li>通过SqlSession实例直接运行映射的SQL语句</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">String resource &#x3D; &quot;sqlMapConfig.xml&quot;;</span><br><span class="line">&#x2F;&#x2F; 读取配置文件</span><br><span class="line">InputStream in &#x3D; Resources.getResourceAsStream(resource);</span><br><span class="line">&#x2F;&#x2F; 需要sqlSessionFactoryBuilder</span><br><span class="line">SqlSessionFactoryBuilder ssfb &#x3D; new SqlSessionFactoryBuilder();</span><br><span class="line">&#x2F;&#x2F; 创建sqlSessionFactory</span><br><span class="line">SqlSessionFactory ssf &#x3D; ssfb.build(in);</span><br><span class="line">&#x2F;&#x2F; 生产sqlSession</span><br><span class="line">SqlSession session &#x3D; ssf.openSession();</span><br><span class="line">&#x2F;&#x2F; 操作数据库</span><br><span class="line">&#x2F;&#x2F; 参数1：要操作的sql语句通过mapper的增删改查标签的id获取 参数2：sql语句的占位符参数的值</span><br><span class="line">User user &#x3D; session.selectOne(&quot;UserMapper.selectUserById&quot;, 1);</span><br><span class="line">System.out.println(user);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>基于Mapper接口方式操作数据</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      SqlSession session &#x3D; MyBatisUtil.createSqlSession();</span><br><span class="line">ProviderMapper providerMapper &#x3D; session.getMapper(ProviderMapper.class);</span><br><span class="line">List&lt;Provider&gt; list &#x3D; providerMapper.selectProviderAndBill(1);</span><br><span class="line">for (Provider provider : list) &#123;</span><br><span class="line">	System.out.println(provider.toStr());</span><br><span class="line">&#125;</span><br><span class="line">MyBatisUtil.closeSqlSession(session);</span><br></pre></td></tr></table></figure>
-
-<h2 id="7-系统核心配置文件"><a href="#7-系统核心配置文件" class="headerlink" title="7 系统核心配置文件"></a>7 系统核心配置文件</h2><h3 id="mybatis-config-xml"><a href="#mybatis-config-xml" class="headerlink" title="mybatis-config.xml"></a>mybatis-config.xml</h3><p><strong>所有节点都严格按照从上至下的顺序编写</strong></p>
-<ul>
-<li>configuration 配置</li>
-<li>properties 可以配置在Java 属性配置文件中</li>
-<li>settings 修改 MyBatis 在运行时的行为方式</li>
-<li>typeAliases 为 Java 类型命名一个别名（简称）</li>
-<li>typeHandlers 类型处理器</li>
-<li>objectFactory 对象工厂</li>
-<li>plugins 插件</li>
-<li>environments 环境</li>
-<li>environment 环境变量</li>
-<li>transactionManager 事务管理器</li>
-<li>dataSource 数据源</li>
-<li>mappers 映射器</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">  PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Config 3.0&#x2F;&#x2F;EN&quot;</span><br><span class="line">  &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">	&lt;!-- 读取数据库配置文件 --&gt;</span><br><span class="line">	&lt;properties resource&#x3D;&quot;db.properties&quot; &#x2F;&gt;</span><br><span class="line">	&lt;!-- 配置映射文件的表与表之间的属性字段是否自动匹配 --&gt;</span><br><span class="line">	&lt;settings&gt;</span><br><span class="line">		&lt;setting name&#x3D;&quot;autoMappingBehavior&quot; value&#x3D;&quot;FULL&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;settings&gt;</span><br><span class="line">	&lt;!-- 配置别名 --&gt;</span><br><span class="line">	&lt;typeAliases&gt;</span><br><span class="line">		&lt;package name&#x3D;&quot;com.dr.entity&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;typeAliases&gt;</span><br><span class="line">	&lt;!-- 在集成spring之后是不用的 --&gt;</span><br><span class="line">	&lt;environments default&#x3D;&quot;development&quot;&gt;</span><br><span class="line">		&lt;environment id&#x3D;&quot;development&quot;&gt;</span><br><span class="line">			&lt;!-- 使用jdbc的事务 --&gt;</span><br><span class="line">			&lt;transactionManager type&#x3D;&quot;JDBC&quot; &#x2F;&gt;</span><br><span class="line">			&lt;!-- 使用连接池 连接数据库 --&gt;</span><br><span class="line">			&lt;dataSource type&#x3D;&quot;POOLED&quot;&gt;</span><br><span class="line">				&lt;property name&#x3D;&quot;driver&quot; value&#x3D;&quot;$&#123;jdbc.driver&#125;&quot; &#x2F;&gt;</span><br><span class="line">				&lt;property name&#x3D;&quot;url&quot; value&#x3D;&quot;$&#123;jdbc.url&#125;&quot; &#x2F;&gt;</span><br><span class="line">				&lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;$&#123;jdbc.username&#125;&quot; &#x2F;&gt;</span><br><span class="line">				&lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;$&#123;jdbc.password&#125;&quot; &#x2F;&gt;</span><br><span class="line">			&lt;&#x2F;dataSource&gt;</span><br><span class="line">		&lt;&#x2F;environment&gt;</span><br><span class="line">	&lt;&#x2F;environments&gt;</span><br><span class="line">	&lt;!-- 配置mapper.xml文件的路径 --&gt;</span><br><span class="line">	&lt;mappers&gt;</span><br><span class="line">		&lt;!-- &lt;mapper resource&#x3D;&quot;mapper&#x2F;UserMapper.xml&quot; &#x2F;&gt; --&gt;</span><br><span class="line">		&lt;!-- 使用package时mapper.java和mapper.xml必须在同一包下 --&gt;</span><br><span class="line">		&lt;package name&#x3D;&quot;com.dr.mapper&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;mappers&gt;</span><br><span class="line">&lt;&#x2F;configuration&gt;</span><br></pre></td></tr></table></figure>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/04/%E5%88%9D%E8%AF%86Mybatis/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring的事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/04/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1/" target="_blank">Spring的事务</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/04/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
-        <time datetime="2020-04-04T09:56:16.580Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="1-事务概述"><a href="#1-事务概述" class="headerlink" title="1. 事务概述"></a>1. 事务概述</h1><ul>
-<li>在JavaEE企业级开发的应用领域，为了保证数据的<strong>完整性和一致性</strong>，必须引入数据库事务的概念，所以事务管理是企业级应用程序开发中必不可少的技术。</li>
-<li>事务就是一组由于逻辑上紧密关联而合并成一个整体(工作单元)的<strong>多个数据库操作</strong>，这些操作<strong>要么都执行，要么都不执行</strong>。</li>
-<li>事务的四个关键属性(ACID)：<ul>
-<li>原子性(atomicity)：“原子”的本意是“不可再分”，事务的原子性表现为一个事务中涉及到的多个操作在逻辑上缺一不可。事务的原子性要求事务中的所有操作要么都执行，要么都不执行。 </li>
-<li>一致性(consistency)：“一致”指的是数据的一致，具体是指：<strong>所有数据都处于满足业务规则的一致性状态</strong>。一致性原则要求：一个事务中不管涉及到多少个操作，都必须保证事务执行之前数据是正确的，事务执行之后数据仍然是正确的。如果一个事务在执行的过程中，其中某一个或某几个操作失败了，则必须将其他所有操作撤销，将数据恢复到事务执行之前的状态，这就是<strong>回滚</strong>。</li>
-<li>隔离性(isolation)：在应用程序实际运行过程中，事务往往是并发执行的，所以很有可能有许多事务同时处理相同的数据，因此每个事务都应该与其他事务隔离开来，防止数据损坏。隔离性原则要求<strong>多个事务在并发执行过程中不会互相干扰</strong>。</li>
-<li>持久性(durability)：持久性原则要求事务执行完成后，对<strong>数据的修改永久的保存</strong>下来，不会因各种系统错误或其他意外情况而受到影响。通常情况下，事务对数据的修改应该被写入到<strong>持久化存储器(外存)</strong>中。</li>
-</ul>
-</li>
-</ul>
-<h1 id="2-Spring的事务管理"><a href="#2-Spring的事务管理" class="headerlink" title="2. Spring的事务管理"></a>2. Spring的事务管理</h1><h3 id="2-1-编程式事务管理"><a href="#2-1-编程式事务管理" class="headerlink" title="2.1 编程式事务管理"></a>2.1 编程式事务管理</h3><ul>
-<li>使用原生的JDBC API进行事务管理<ul>
-<li>获取数据库连接Connection对象</li>
-<li>取消事务的自动提交</li>
-<li>执行操作</li>
-<li>正常完成操作时手动提交事务</li>
-<li>执行失败时回滚事务</li>
-<li>关闭相关资源</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>缺点：<ul>
-<li>编程式事务管理需要将事务管理代码嵌入到业务方法中来控制事务的<strong>提交和回滚</strong>。</li>
-<li>在使用编程式事务管理的时候，必须在每个事务操作的时候包含额外的事务管理代码。相对于<strong>核心业务</strong>而言，事务管理的代码显然属于<strong>非核心业务</strong>，如果多个模块都使用同样模式的代码进行事务管理，显然会造成较大程度的<strong>代码冗余</strong>。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Eg:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">SqlSession session &#x3D; null;</span><br><span class="line">try &#123;</span><br><span class="line">	session &#x3D; MyBatisUtil.createSqlSession();</span><br><span class="line">	int i &#x3D; session.getMapper(UserMapper.class).addUser(user);</span><br><span class="line">	session.commit();</span><br><span class="line">	System.out.println(&quot;成功&quot;);</span><br><span class="line">	return i;</span><br><span class="line">&#125; catch (Exception e) &#123;</span><br><span class="line">	session.rollback();</span><br><span class="line">	System.out.println(&quot;失败&quot;);</span><br><span class="line">	;</span><br><span class="line">	return -1;</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">	MyBatisUtil.closeSqlSession(session);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="2-2-声明式事务管理"><a href="#2-2-声明式事务管理" class="headerlink" title="2.2 声明式事务管理"></a>2.2 声明式事务管理</h3><ul>
-<li>大多数情况下声明式事务比编程式事务管理更好：它将事务管理代码从业务方法中分离出来，以声明的方式来实现事务管理。</li>
-<li>事务管理代码的固定模式作为一种横切关注点，可以通过AOP方法模块化，进而借助Spring AOP框架实现声明式事务管理。</li>
-<li>Spring在不同的事务管理API之上定义了一个抽象层，通过配置的方式使其生效，从而让应用程序开发人员不必了解事务管理API的底层实现细节，就可以使用Spring的事务管理机制。</li>
-<li>Spring既支持编程式事务管理，也支持声明式的事务管理。</li>
-</ul>
-<h1 id="3-事务管理器"><a href="#3-事务管理器" class="headerlink" title="3. 事务管理器"></a>3. 事务管理器</h1><h3 id="3-1-Spring提供事务管理器"><a href="#3-1-Spring提供事务管理器" class="headerlink" title="3.1 Spring提供事务管理器"></a>3.1 Spring提供事务管理器</h3><ul>
-<li>Spring从不同的事务管理API中抽象出了一整套事务管理机制，让事务管理代码从特定的事务技术中独立出来。开发人员通过配置的方式进行事务管理，而不必了解其底层是如何实现的。</li>
-<li>事务管理器可以以普通的bean的形式声明在Spring IOC容器中。</li>
-</ul>
-<h3 id="3-2-事务管理器的实现"><a href="#3-2-事务管理器的实现" class="headerlink" title="3.2 事务管理器的实现"></a>3.2 事务管理器的实现</h3><ol>
-<li>配置文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  	&lt;!-- 用连接池配置数据源，bean来创建连接，destroy-method最好写以防回收 --&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;dataSource&quot;</span><br><span class="line">	class&#x3D;&quot;org.apache.commons.dbcp.BasicDataSource&quot; destroy-method&#x3D;&quot;close&quot;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;driverClassName&quot;</span><br><span class="line">		value&#x3D;&quot;com.mysql.jdbc.Driver&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;url&quot;</span><br><span class="line">		value&#x3D;&quot;jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;smbms?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8&amp;zeroDateTimeBehavior&#x3D;convertToNull&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;root&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;123456&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br><span class="line">   </span><br><span class="line">&lt;!-- 配置事务管理器，它依赖于连接对象，只有链接对象创建成功，才能去管理事务 --&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;transactionManager&quot;</span><br><span class="line">	class&#x3D;&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">	&lt;!-- 事务针对连接对象操作，连接对象由数据源产生 --&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSource&quot;&gt;&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br><span class="line">   &lt;!-- 开启事务注解驱动，即对事务相关的注解进行扫描，解析含义并执行功能 --&gt;</span><br><span class="line">&lt;tx:annotation-driven transaction-manager&#x3D;&quot;transactionManager&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-
-<ol start="2">
-<li>在需要进行事务控制的方法上加注解@Transactional</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.service.impl;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">import javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import org.springframework.transaction.annotation.Propagation;</span><br><span class="line">import org.springframework.transaction.annotation.Transactional;</span><br><span class="line"></span><br><span class="line">import com.dr.entity.User;</span><br><span class="line">import com.dr.mapper.UserMapper;</span><br><span class="line">import com.dr.service.UserService;</span><br><span class="line">&#x2F;&#x2F;开启事务</span><br><span class="line">@Transactional</span><br><span class="line">@Service(&quot;userService&quot;)</span><br><span class="line">public class UserServiceImpl implements UserService &#123;</span><br><span class="line">	@Autowired</span><br><span class="line">	private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">	public UserMapper getUserMapper() &#123;</span><br><span class="line">		return userMapper;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setUserMapper(UserMapper userMapper) &#123;</span><br><span class="line">		this.userMapper &#x3D; userMapper;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;**</span><br><span class="line">	*@Transactional:对方法中所有操作作为一个事务进行管理</span><br><span class="line">	*在方法上使用，只对该方法有效</span><br><span class="line">	*在类上使用，对类中所有方法都有效</span><br><span class="line">	*@Transactional中可以设置的属性：</span><br><span class="line">	*propagation:A方法和B方法都有事务，当A方法在调用B方法时，会将A中的事务传播给B，B方法对于事务的处理方式(B依赖本身事务还是调用者的事务)就是事物的传播行为</span><br><span class="line">	*</span><br><span class="line">	*isolation:设置隔离级别</span><br><span class="line">	*</span><br><span class="line">	*timeout:在事务强制回滚前最多可以等待的时间</span><br><span class="line">	*</span><br><span class="line">	*readOnly:指定当前事务中的一系列操作是否为只读（只有全为读操作时候添加）</span><br><span class="line">	*若设置为只读，不管事务中有没有写操作，mysql就会在请求访问数据的时候，不加锁，提高性能</span><br><span class="line">	*</span><br><span class="line">	*rollbackFor|rollbackForClassName|noRollbackFor|noRollbackForClassName:设置因为什么回滚或不因为什么回滚</span><br><span class="line">	*&#x2F;</span><br><span class="line">	&#x2F;&#x2F;进行事务注解</span><br><span class="line">	@Transactional(propagation &#x3D; Propagation.SUPPORTS)</span><br><span class="line">	@Override</span><br><span class="line">	public List&lt;User&gt; getUserListBy1(User user) &#123;</span><br><span class="line">		return userMapper.getUserListBy1(user);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-事务的传播行为"><a href="#4-事务的传播行为" class="headerlink" title="4. 事务的传播行为"></a>4. 事务的传播行为</h1><ul>
-<li>当事务方法被另一个事务方法调用时，必须指定事务应该如何传播。<ul>
-<li>例如：方法可能继续在现有事务中运行，也可能开启一个新事务，并在自己的事务中运行。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Spring定义了7种传播行为</p>
-<ul>
-<li><strong>REQUIRED</strong>：如果有事务在运行，当前的方法就在这个事务内运行，否则就启动一个新的事务，并在自己的事务内运行</li>
-<li><strong>REQUIRED_NEW</strong>：必须启动新事务，并在自己的事务内运行。如果当前存在事务，把当前事务挂起(不使用的意思)。</li>
-<li><strong>SUPPORTS</strong>：支持当前事务，如果当前没有事务，就以非事务方式执行。</li>
-<li><strong>NOT_SUPPORTED</strong>：以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</li>
-<li><strong>MANDATORY</strong>：必须在当前的事务中运行，如果当前没有事务，就抛出异常。</li>
-<li><strong>NEVER</strong>：以非事务方式执行，如果当前存在事务，则抛出异常。</li>
-<li><strong>NESTED</strong>：如果有事务在运行，当前的方法就应该在这个事务的嵌套事务内运行，否则，就启动一个新的事务，并在它自己的事务内运行。</li>
-</ul>
-</li>
-<li><p>事务传播属性可以在@Transactional注解的propagation属性中定义。</p>
-</li>
-</ul>
-<h1 id="5-事务的隔离级别"><a href="#5-事务的隔离级别" class="headerlink" title="5. 事务的隔离级别"></a>5. 事务的隔离级别</h1><h3 id="5-1-事务的并发问题："><a href="#5-1-事务的并发问题：" class="headerlink" title="5.1 事务的并发问题："></a>5.1 事务的并发问题：</h3><ul>
-<li>假设现在有两个事务：Transaction01和Transaction02并发执行。</li>
-</ul>
-<ol>
-<li><strong>脏读</strong><ol>
-<li>Transaction01将某条记录的age值从20修改为30。</li>
-<li>Transaction02读取了Transaction01更新后的值：30。</li>
-<li>Transaction01回滚，age值恢复到了20。</li>
-<li>Transaction02读取到的30就是一个无效的值。</li>
-</ol>
-</li>
-<li><strong>不可重复读</strong><ol>
-<li>Transaction01读取了age值为20。</li>
-<li>Transaction02将age值修改为30。</li>
-<li>Transaction01再次读取age值为30，和第一次读取不一致。</li>
-</ol>
-</li>
-<li><strong>幻读</strong><ol>
-<li>Transaction01读取了STUDENT表中的一部分数据。</li>
-<li>Transaction02向STUDENT表中插入了新的行。</li>
-<li>Transaction01读取了STUDENT表时，多出了一些行。</li>
-</ol>
-</li>
-</ol>
-<h3 id="5-2-事务的隔离级别，解决并发问题"><a href="#5-2-事务的隔离级别，解决并发问题" class="headerlink" title="5.2 事务的隔离级别，解决并发问题"></a>5.2 事务的隔离级别，解决并发问题</h3><ul>
-<li>数据库系统必须具有隔离并发运行各个事务的能力，使它们不会相互影响，避免各种并发问题。一个事务与其他事务隔离的程度称为隔离级别。SQL标准中规定了多种事务隔离级别，不同隔离级别对应不同的干扰程度，隔离级别越高，数据一致性就越好，但并发性越弱。</li>
-</ul>
-<ul>
-<li>读未提交：READ UNCOMMITTED<ul>
-<li>允许Transaction01读取Transaction02未提交的修改。  </li>
-</ul>
-</li>
-<li>读已提交：READ COMMITTED<ul>
-<li>要求Transaction01只能读取Transaction02已提交的修改。</li>
-</ul>
-</li>
-<li>可重复读：REPEATABLE READ<ul>
-<li>确保Transaction01可以多次从一个字段中读取到相同的值，即Transaction01执行期间禁止其它事务对这个字段进行更新。(已有数据不可动，但可插入新数据所以会有幻读)</li>
-</ul>
-</li>
-<li>串行化：SERIALIZABLE<ul>
-<li>确保Transaction01可以多次从一个表中读取到相同的行，在Transaction01执行期间，禁止其它事务对这个表进行添加、更新、删除操作。可以避免任何并发问题，但性能十分低下。(相当于单线程)</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>隔离级别</th>
-<th>脏读</th>
-<th>不可重复读</th>
-<th>幻读</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>READ UNCOMMITTED</td>
-<td>有</td>
-<td>有</td>
-<td>有</td>
-</tr>
-<tr>
-<td>READ COMMITTED</td>
-<td>无</td>
-<td>有</td>
-<td>有</td>
-</tr>
-<tr>
-<td>REPEATABLE READ</td>
-<td>无</td>
-<td>无</td>
-<td>有</td>
-</tr>
-<tr>
-<td>SERIALIZABLE</td>
-<td>无</td>
-<td>无</td>
-<td>五</td>
-</tr>
-</tbody></table>
-<p><strong>MySQL默认级别REPEATABLE READ</strong></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/04/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring的AOP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/04/Spring%E7%9A%84AOP/" target="_blank">Spring的AOP</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/04/Spring%E7%9A%84AOP/" class="archive-article-date">
-        <time datetime="2020-04-04T09:55:54.881Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="1-AOP概述"><a href="#1-AOP概述" class="headerlink" title="1 AOP概述"></a>1 AOP概述</h1><ul>
-<li><p>AOP(Aspect-Oriented-Programming，面向切面编程)：是一种新的方法论，是对传统OOP(Object-Oriented-Programming，面向对象编程)的补充。</p>
-<ul>
-<li>面向对象  纵向继承机制</li>
-<li>面向切面  横向抽取机制    </li>
-</ul>
-</li>
-<li><p>AOP的底层实现：</p>
-<ul>
-<li>使用JDK动态代理实现。</li>
-<li>使用cglib来实现<h1 id="2-AOP的优点"><a href="#2-AOP的优点" class="headerlink" title="2 AOP的优点"></a>2 AOP的优点</h1></li>
-</ul>
-</li>
-<li><p>业务模块更简洁，只包含核心业务代码</p>
-</li>
-<li><p>公共功能代码不分散，便于维护和升级</p>
-</li>
-</ul>
-<h1 id="3-AOP术语"><a href="#3-AOP术语" class="headerlink" title="3 AOP术语"></a>3 AOP术语</h1><ul>
-<li>横切关注点<ul>
-<li>从每个方法中抽取出来的同一类非核心业务。（公共功能部分）</li>
-</ul>
-</li>
-<li>切面(Aspect)<ul>
-<li>封装横切关注点信息的类，每个关注点体现为一个通知方法。</li>
-</ul>
-</li>
-<li>通知(Advice)<ul>
-<li>切面必须要完成的各个具体工作</li>
-</ul>
-</li>
-<li>目标(Target)<ul>
-<li>被通知的对象</li>
-</ul>
-</li>
-<li>织入(Weaving)<ul>
-<li>是把增强应用到目标的过程，把advice应用到target的过程</li>
-</ul>
-</li>
-<li>代理(Proxy)<ul>
-<li>向目标对象应用通知之后创建的代理对象</li>
-</ul>
-</li>
-<li>连接点(Joinpoint)<ul>
-<li>横切关注点在程序代码中的具体体现，对应程序执行的某个特定位置。例如：类某个方法调用前、调用后、方法捕获到异常后，最终。</li>
-</ul>
-</li>
-<li>切入点(pointcut)<ul>
-<li>定位连接点的方式。（切入点表达式）</li>
-</ul>
-</li>
-</ul>
-<h1 id="4-AspectJ"><a href="#4-AspectJ" class="headerlink" title="4 AspectJ"></a>4 AspectJ</h1><p>AspectJ：Java社区里最完整最流行的AOP框架。<br>在Spring2.0以上版本中，可以使用基于AspectJ注解或基于XML配置的AOP。</p>
-<h3 id="4-1-用AspectJ注解声明切面"><a href="#4-1-用AspectJ注解声明切面" class="headerlink" title="4.1 用AspectJ注解声明切面"></a>4.1 用AspectJ注解声明切面</h3><ul>
-<li>要在Spring中声明AspectJ切面，只需要在IOC容器中将切面声明为bean实例。</li>
-<li>当在Spring IOC容器中初始化AspectJ切面之后，Spring IOC容器就会为那些与 AspectJ切面相匹配的bean创建代理。</li>
-<li>在AspectJ注解中，切面只是一个带有@Aspect注解的Java类，它往往要包含很多通知。</li>
-<li>通知是标注有某种注解的简单的Java方法。</li>
-<li>AspectJ支持5种类型的通知注解：<ul>
-<li>@Before：前置通知，在方法执行之前执行(<strong>前置增强</strong>)</li>
-<li>@After：后置通知，在方法执行之后执行(<strong>最终增强</strong>)</li>
-<li>@AfterRunning：返回通知，在方法返回结果之后执行(<strong>后置增强</strong>)</li>
-<li>@AfterThrowing：异常通知，在方法抛出异常之后执行(<strong>异常抛出增强</strong>)</li>
-<li>@Around：环绕通知，包含前面四种(<strong>环绕增强</strong>)</li>
-</ul>
-</li>
-</ul>
-<h1 id="5-AOP的配置"><a href="#5-AOP的配置" class="headerlink" title="5 AOP的配置"></a>5 AOP的配置</h1><ul>
-<li>导入所需的jar包<ul>
-<li>aopalliance-1.0.jar</li>
-<li>aspectjweaver-1.6.9.jar</li>
-<li>spring-aop-5.0.8.RELEASE.jar</li>
-<li>spring-aspects-5.0.8.RELEASE.jar</li>
-</ul>
-</li>
-</ul>
-<p><strong>主流：AOP注解配置</strong></p>
-<ul>
-<li>applicationContext.xml配置 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   &lt;!-- 扫描包，让Spring管理 --&gt;</span><br><span class="line">&lt;context:component-scan</span><br><span class="line">	base-package&#x3D;&quot;com.dr.service,com.dr.dao,com.dr.aop&quot; &#x2F;&gt;</span><br><span class="line">&lt;!-- 要想实现切面，一定要引入aop包进行扫描 --&gt;</span><br><span class="line">&lt;!-- 实现aop自动代理 --&gt;</span><br><span class="line">&lt;aop:aspectj-autoproxy &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>编写切面类并进行注解</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.aop;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import org.apache.log4j.Logger;</span><br><span class="line">import org.aspectj.lang.JoinPoint;</span><br><span class="line">import org.aspectj.lang.ProceedingJoinPoint;</span><br><span class="line">import org.aspectj.lang.annotation.AfterReturning;</span><br><span class="line">import org.aspectj.lang.annotation.AfterThrowing;</span><br><span class="line">import org.aspectj.lang.annotation.Around;</span><br><span class="line">import org.aspectj.lang.annotation.Aspect;</span><br><span class="line">import org.aspectj.lang.annotation.Before;</span><br><span class="line">import org.aspectj.lang.annotation.Pointcut;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;AOP基于IOC</span><br><span class="line">&#x2F;*声明为组件，让spring 自动管理,实例化*&#x2F;</span><br><span class="line">@Component</span><br><span class="line">&#x2F;* 声明该类为切面bean *&#x2F;</span><br><span class="line">@Aspect</span><br><span class="line">public class UserServiceLogger &#123;</span><br><span class="line">	Logger logger &#x3D; Logger.getLogger(UserServiceLogger.class);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;定义重用切入点</span><br><span class="line">	@Pointcut(&quot;execution(public int *..UserServiceImpl.addUser(..))&quot;)</span><br><span class="line">	public void pc() &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 前置增强</span><br><span class="line">	&#x2F;**</span><br><span class="line">	 * @Before:将方法指定为前置通知 必须设置value，其值为切入点表达式（你要切入的方法）</span><br><span class="line">	 * @param jp</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	@Before(&quot;pc()&quot;)</span><br><span class="line">	public void before(JoinPoint jp) &#123;</span><br><span class="line">		logger.info(&quot;前置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法入参：&quot;</span><br><span class="line">				+ Arrays.toString(jp.getArgs()));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 后置增强</span><br><span class="line">	@AfterReturning(pointcut &#x3D; &quot;pc()&quot;, returning &#x3D; &quot;result&quot;)</span><br><span class="line">	public void afterReturning(JoinPoint jp, Object result) &#123;</span><br><span class="line">		logger.info(&quot;后置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法返回值：&quot; + result);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 异常抛出增强</span><br><span class="line">	@AfterThrowing(pointcut &#x3D; &quot;pc()&quot;, throwing &#x3D; &quot;e&quot;)</span><br><span class="line">	public void afterThrowing(JoinPoint jp, Exception e) &#123;</span><br><span class="line">		logger.info(&quot;异常增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。异常信息：&quot; + e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 环绕增强</span><br><span class="line">	@Around(&quot;pc()&quot;)</span><br><span class="line">	public Object around(ProceedingJoinPoint jp) &#123;</span><br><span class="line">		logger.info(&quot;前置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法入参：&quot;</span><br><span class="line">				+ Arrays.toString(jp.getArgs()));</span><br><span class="line">		try &#123;</span><br><span class="line">			&#x2F;&#x2F; 执行被代理的方法也就是目标方法</span><br><span class="line">			Object o &#x3D; jp.proceed();</span><br><span class="line">			logger.info(&quot;后置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法返回值：&quot; + o);</span><br><span class="line">			&#x2F;&#x2F; 返回目标方法的执行结果，否则报错空指针异常</span><br><span class="line">			return o;</span><br><span class="line">		&#125; catch (Throwable e) &#123;</span><br><span class="line">			logger.info(</span><br><span class="line">					&quot;异常增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。异常信息：&quot; + e.getMessage());</span><br><span class="line">			return null;</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			logger.info(&quot;最终增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。执行完毕&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="6-五大通知"><a href="#6-五大通知" class="headerlink" title="6 五大通知"></a>6 五大通知</h1><ul>
-<li>通知<ul>
-<li>在具体的连接点上要执行的操作。</li>
-<li>一个切面可以包括一个或者多个通知。</li>
-<li>通知所使用的注解的值往往是切入点表达式。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>前置通知(<strong>前置增强</strong>)</p>
-<ul>
-<li>前置通知：在方法执行之前执行的通知</li>
-<li>使用@Before注解</li>
-</ul>
-</li>
-<li><p>后置通知(<strong>最终增强</strong>)</p>
-<ul>
-<li>后置通知：后置通知是在连接点完成之后执行的，即连接点返回结果或者抛出异常的时候</li>
-<li>使用@After注解</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>返回通知(<strong>后置增强</strong>)<ul>
-<li>返回通知：无论连接点是正常返回还是抛出异常，后置通知都会执行。如果只想在连接点返回的时候记录日志，应使用返回通知代替后置通知。</li>
-<li>使用@AfterReturning注解,在返回通知中访问连接点的返回值<ul>
-<li>在返回通知中，只要将returning属性添加到@AfterReturning注解中，就可以访问连接点的返回值。该属性的值即为用来传入返回值的参数名称</li>
-<li>必须在通知方法的签名中添加一个同名参数。在运行时Spring AOP会通过这个参数传递返回值</li>
-<li>原始的切点表达式需要出现在pointcut属性中</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>异常通知(<strong>异常抛出增强</strong>)<ul>
-<li>异常通知：只在连接点抛出异常时才执行异常通知</li>
-<li>将throwing属性添加到@AfterThrowing注解中，也可以访问连接点抛出的异常。Throwable是所有错误和异常类的顶级父类，所以在异常通知方法可以捕获到任何错误和异常。</li>
-<li>如果只对某种特殊的异常类型感兴趣，可以将参数声明为其他异常的参数类型。然后通知就只在抛出这个类型及其子类的异常时才被执行。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>环绕通知(<strong>环绕增强</strong>)<ul>
-<li>环绕通知是所有通知类型中功能最为强大的，能够全面地控制连接点，甚至可以控制是否执行连接点。</li>
-<li>对于环绕通知来说，连接点的参数类型必须是ProceedingJoinPoint。它是 JoinPoint的子接口，允许控制何时执行，是否执行连接点。</li>
-<li>在环绕通知中需要明确调用ProceedingJoinPoint的proceed()方法来执行被代理的方法。如果忘记这样做就会导致通知被执行了，但目标方法没有被执行。</li>
-<li>注意：环绕通知的方法需要返回目标方法执行之后的结果，即调用 joinPoint.proceed();的返回值，否则会出现空指针异常。</li>
-</ul>
-</li>
-</ul>
-<h1 id="在XML中配置AOP"><a href="#在XML中配置AOP" class="headerlink" title="在XML中配置AOP"></a>在XML中配置AOP</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置切面类 --&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;userServiceLogger&quot; class&#x3D;&quot;com.dr.aop.UserServiceLogger&quot;&gt;&lt;&#x2F;bean&gt;</span><br><span class="line">&lt;!-- 进行AOP配置 --&gt;</span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">	&lt;aop:pointcut</span><br><span class="line">		expression&#x3D;&quot;execution(public int</span><br><span class="line">		addUser(com.dr.bean.User))&quot;</span><br><span class="line">		id&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">	&lt;aop:aspect ref&#x3D;&quot;userServiceLogger&quot;&gt;</span><br><span class="line">		&lt;aop:before method&#x3D;&quot;before&quot; pointcut-ref&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:after-returning method&#x3D;&quot;afterReturning&quot;</span><br><span class="line">			pointcut-ref&#x3D;&quot;pc&quot; returning&#x3D;&quot;result&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:after-throwing method&#x3D;&quot;afterThrowing&quot;</span><br><span class="line">			pointcut-ref&#x3D;&quot;pc&quot; throwing&#x3D;&quot;e&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:around method&#x3D;&quot;around&quot; pointcut-ref&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;aop:aspect&gt;</span><br><span class="line">&lt;&#x2F;aop:config&gt;</span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/04/Spring%E7%9A%84AOP/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Sping的IOC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/04/04/Sping%E7%9A%84IOC/" target="_blank">Spring的IOC</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/04/04/Sping%E7%9A%84IOC/" class="archive-article-date">
-        <time datetime="2020-04-04T09:05:15.810Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="1-Spring的优点"><a href="#1-Spring的优点" class="headerlink" title="1. Spring的优点"></a>1. Spring的优点</h1><ul>
-<li>低侵入式设计 </li>
-<li>独立于各种应用服务器</li>
-<li>依赖注入特性将组件关系透明化，降低了耦合度 </li>
-<li>面向切面编程特性允许将通用任务进行集中式处理 </li>
-<li>与第三方框架的良好整合</li>
-</ul>
-<h1 id="2-IOC的理解"><a href="#2-IOC的理解" class="headerlink" title="2. IOC的理解"></a>2. IOC的理解</h1><p>IOC（Inversion of Control）:</p>
-<ul>
-<li>IOC的反转：创建对象这份工作由我们自己执行反转给spring帮我们执行</li>
-</ul>
-<ul>
-<li>IOC的控制：就是由spring帮我们负责创建销毁对象，掌控对象的生命周期，当我们需要使用对象的时候向spring申请即可</li>
-</ul>
-<ul>
-<li><p>IOC是一种编程思想，也是一种新的设计模式 因为IOC仅仅创建对象而并没有属性值，DI(依赖注入)就是将值通过配置的方式为变量赋值 所以IOC的实现需要DI的支持</p>
-</li>
-<li><p>配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;</span><br><span class="line">	xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">	xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot;</span><br><span class="line">	xmlns:aop&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&quot;</span><br><span class="line">	xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans.xsd http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context.xsd http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&#x2F;spring-aop.xsd &quot;&gt;</span><br><span class="line">	&lt;!-- </span><br><span class="line">		&lt;bean&gt;:定义spring所管理的一个对象</span><br><span class="line">		id:该对象的唯一标识，不能重复，再通过类型获取的时候可以不设置</span><br><span class="line">		class:此对象所属类的全类名</span><br><span class="line">	 --&gt;</span><br><span class="line">	&lt;bean id&#x3D;&quot;person&quot; class&#x3D;&quot;com.dr.bean.Person&quot;&gt;</span><br><span class="line">		&lt;!-- </span><br><span class="line">			&lt;property&gt;:为对象的属性赋值</span><br><span class="line">			name:属性名</span><br><span class="line">			value:值 </span><br><span class="line">		--&gt;</span><br><span class="line">		&lt;property name&#x3D;&quot;id&quot; value&#x3D;&quot;1&quot;&#x2F;&gt;</span><br><span class="line">		&lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;小宁&quot;&#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;bean&gt;</span><br><span class="line">	</span><br><span class="line">&lt;&#x2F;beans&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象获取</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.test;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.ApplicationContext;</span><br><span class="line">import org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line">import com.dr.bean.Person;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">	&#x2F;&#x2F; 通过反射机制创建对象，newInstance必须有无参构造</span><br><span class="line">	@org.junit.Test</span><br><span class="line">	public void Test1() &#123;</span><br><span class="line">		&#x2F;&#x2F; 初始化容器（加载配置文件）</span><br><span class="line">		ApplicationContext ac &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span><br><span class="line">		&#x2F;&#x2F; 通过getBean()获取对象,</span><br><span class="line">&#x2F;&#x2F;		Person person &#x3D; (Person) ac.getBean(&quot;person&quot;);</span><br><span class="line">		&#x2F;&#x2F; 使用此方法获取对象时，要求spring所管理的此类型对象只能有一个</span><br><span class="line">&#x2F;&#x2F;		Person person &#x3D; ac.getBean(Person.class);</span><br><span class="line">		Person person &#x3D; ac.getBean(&quot;person&quot;, Person.class);</span><br><span class="line">		System.out.println(person);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="3-Spring通过bean管理对象"><a href="#3-Spring通过bean管理对象" class="headerlink" title="3. Spring通过bean管理对象"></a>3. Spring通过bean管理对象</h1><p><strong>实体类必须有无参构造器</strong></p>
-<h2 id="XML配置"><a href="#XML配置" class="headerlink" title="XML配置"></a>XML配置</h2><h3 id="3-1-依赖注入的方式"><a href="#3-1-依赖注入的方式" class="headerlink" title="3.1 依赖注入的方式"></a>3.1 依赖注入的方式</h3><h4 id="3-1-1-通过bean的setXxx-方法赋值"><a href="#3-1-1-通过bean的setXxx-方法赋值" class="headerlink" title="3.1.1 通过bean的setXxx()方法赋值"></a>3.1.1 通过bean的setXxx()方法赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   &lt;bean name&#x3D;&quot;user&quot; class&#x3D;&quot;com.dr.entity.User&quot;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;id&quot; value&#x3D;&quot;1&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;userCode&quot; value&#x3D;&quot;zhangsan&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;userName&quot; value&#x3D;&quot;张三&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-1-2-通过bean的构造器赋值"><a href="#3-1-2-通过bean的构造器赋值" class="headerlink" title="3.1.2 通过bean的构造器赋值"></a>3.1.2 通过bean的构造器赋值</h4><ul>
-<li>Spring自动匹配合适的构造器</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   &lt;bean id&#x3D;&quot;person2&quot; class&#x3D;&quot;com.dr.bean.Person&quot;&gt;</span><br><span class="line">	&lt;constructor-arg value&#x3D;&quot;1&quot; &#x2F;&gt;</span><br><span class="line">	&lt;constructor-arg value&#x3D;&quot;zhangsan&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>通过索引值指定参数位置</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   &lt;bean id&#x3D;&quot;person2&quot; class&#x3D;&quot;com.dr.bean.Person&quot;&gt;</span><br><span class="line">	&lt;constructor-arg value&#x3D;&quot;1&quot; index&#x3D;&quot;0&quot; &#x2F;&gt;</span><br><span class="line">	&lt;constructor-arg value&#x3D;&quot;zhangsan&quot; index&#x3D;&quot;1&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>通过类型区分重载的构造器</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   &lt;bean id&#x3D;&quot;person4&quot; class&#x3D;&quot;com.dr.bean.Person&quot;&gt;</span><br><span class="line">	&lt;constructor-arg value&#x3D;&quot;1&quot; type&#x3D;&quot;java.lang.Integer&quot;&#x2F;&gt;</span><br><span class="line">	&lt;constructor-arg value&#x3D;&quot;zhangsan&quot; type&#x3D;&quot;java.lang.String&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-1-3-p名称空间"><a href="#3-1-3-p名称空间" class="headerlink" title="3.1.3 p名称空间"></a>3.1.3 p名称空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;person5&quot; class&#x3D;&quot;com.dr.bean.Person&quot; p:id&#x3D;&quot;1&quot; p:name&#x3D;&quot;zhangsan&quot;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-1-4-集合赋值"><a href="#3-1-4-集合赋值" class="headerlink" title="3.1.4 集合赋值"></a>3.1.4 集合赋值</h4><ul>
-<li>array数组</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   &lt;bean id&#x3D;&quot;person7&quot; class&#x3D;&quot;com.dr.bean.Person&quot;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;str&quot;&gt;</span><br><span class="line">		&lt;array&gt;</span><br><span class="line">			&lt;value&gt;1&lt;&#x2F;value&gt;</span><br><span class="line">			&lt;value&gt;zhangsan&lt;&#x2F;value&gt;</span><br><span class="line">			&lt;value&gt;$%!#@$&lt;&#x2F;value&gt;</span><br><span class="line">		&lt;&#x2F;array&gt;</span><br><span class="line">	&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>list集合</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   &lt;bean id&#x3D;&quot;person6&quot; class&#x3D;&quot;com.dr.bean.Person&quot;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;list&quot;&gt;</span><br><span class="line">		&lt;list&gt;</span><br><span class="line">			&lt;value&gt;1&lt;&#x2F;value&gt;</span><br><span class="line">			&lt;value&gt;zhangsan&lt;&#x2F;value&gt;</span><br><span class="line">			&lt;value&gt;$%!#@$&lt;&#x2F;value&gt;</span><br><span class="line">		&lt;&#x2F;list&gt;</span><br><span class="line">	&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>map集合</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   &lt;bean id&#x3D;&quot;person8&quot; class&#x3D;&quot;com.dr.bean.Person&quot;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;map&quot;&gt;</span><br><span class="line">	&lt;map&gt;</span><br><span class="line">		&lt;entry&gt;</span><br><span class="line">			&lt;key&gt;</span><br><span class="line">				&lt;value&gt;1&lt;&#x2F;value&gt;</span><br><span class="line">			&lt;&#x2F;key&gt;</span><br><span class="line">			&lt;ref bean&#x3D;&quot;person1&quot;&#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;entry&gt;</span><br><span class="line">		&lt;entry&gt;</span><br><span class="line">			&lt;key&gt;</span><br><span class="line">				&lt;value&gt;2&lt;&#x2F;value&gt;</span><br><span class="line">			&lt;&#x2F;key&gt;</span><br><span class="line">			&lt;ref bean&#x3D;&quot;person2&quot;&#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;entry&gt;</span><br><span class="line">	&lt;&#x2F;map&gt;</span><br><span class="line">	&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-1-5-FactoryBean接口"><a href="#3-1-5-FactoryBean接口" class="headerlink" title="3.1.5 FactoryBean接口"></a>3.1.5 FactoryBean接口</h4><p><strong>Spring中有两种类型的bean，一种是普通bean，另一种是工厂bean，即FactoryBean。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.factorybean;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.FactoryBean;</span><br><span class="line"></span><br><span class="line">public class MyFactory implements FactoryBean&lt;Car&gt; &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	&#x2F;&#x2F; 获取对象</span><br><span class="line">	public Car getObject() throws Exception &#123;</span><br><span class="line">		Car car &#x3D; new Car();</span><br><span class="line">		car.setBrand(&quot;奥迪&quot;);</span><br><span class="line">		car.setPrice(&quot;200000&quot;);</span><br><span class="line">		return car;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	&#x2F;&#x2F; 返回对象类型</span><br><span class="line">	public Class&lt;?&gt; getObjectType() &#123;</span><br><span class="line">		return Car.class;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	&#x2F;&#x2F; 是否单例</span><br><span class="line">	public boolean isSingleton() &#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">    &lt;bean id&#x3D;&quot;factory&quot; class&#x3D;&quot;com.dr.factorybean.MyFactory&quot;&gt;</span><br><span class="line">    &lt;&#x2F;bean&gt;</span><br><span class="line">-------------------------------------------------------------------------</span><br><span class="line">    ApplicationContext ac &#x3D; new ClassPathXmlApplicationContext(&quot;factory-bean.xml&quot;);</span><br><span class="line">	&#x2F;&#x2F;创建的是工厂中getObject所返回的对象</span><br><span class="line">	Object object &#x3D; ac.getBean(&quot;factory&quot;);</span><br><span class="line">	System.out.println(object);</span><br></pre></td></tr></table></figure>
-<h4 id="3-1-7-使用外部属性文件"><a href="#3-1-7-使用外部属性文件" class="headerlink" title="3.1.7 使用外部属性文件"></a>3.1.7 使用外部属性文件</h4><p>多用于配置数据库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:property-placeholder location&#x3D;&quot;classpath:db.properties&quot;&#x2F;&gt;</span><br><span class="line">&lt;!-- 配置dbcp数据源，bean来创建连接，destroy-method最好写以防回收 --&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;dataSource&quot;</span><br><span class="line">	class&#x3D;&quot;org.apache.commons.dbcp.BasicDataSource&quot; destroy-method&#x3D;&quot;close&quot;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;driverClassName&quot;</span><br><span class="line">		value&#x3D;&quot;$&#123;driver&#125;&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;url&quot;</span><br><span class="line">		value&#x3D;&quot;$&#123;url&#125;&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;$&#123;user&#125;&quot; &#x2F;&gt;</span><br><span class="line">	&lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;$&#123;password&#125;&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="注解配置"><a href="#注解配置" class="headerlink" title="注解配置"></a>注解配置</h2><p>相对于XML方式而言，通过注解的方式配置bean更加简洁和优雅，而且和MVC组件化开发的理念十分契合，是开发中常用的使用方式。</p>
-<h4 id="3-1-6-使用注解标识组件"><a href="#3-1-6-使用注解标识组件" class="headerlink" title="3.1.6 使用注解标识组件"></a>3.1.6 使用注解标识组件</h4><ul>
-<li>@Component：普通组件<ul>
-<li>标识一个受Spring IOC容器管理的组件</li>
-</ul>
-</li>
-<li>@Repository：持久化层组件<ul>
-<li>标识一个受Spring IOC容器管理的持久化层组件</li>
-</ul>
-</li>
-<li>@Service：业务逻辑层组件<ul>
-<li>标识一个受Spring IOC容器管理的业务逻辑层组件</li>
-</ul>
-</li>
-<li>@Controller：表述层控制器组件<ul>
-<li>标识一个受Spring IOC容器管理的表述层控制器组件</li>
-</ul>
-</li>
-</ul>
-<p><strong>注意</strong>：<br>事实上Spring并没有能力识别一个组件到底是不是它所标记的类型，即使将            @Respository注解用在一个表述层控制器组件上面也不会产生任何错误，所以    @Respository、@Service、@Controller这几个注解<strong>仅仅是为了让开发人员自己明确当前的组件扮演的角色。</strong></p>
-<h4 id="3-1-7-怎样才能使用注解配置"><a href="#3-1-7-怎样才能使用注解配置" class="headerlink" title="3.1.7 怎样才能使用注解配置"></a>3.1.7 怎样才能使用注解配置</h4><ol>
-<li>扫描组件</li>
-</ol>
-<ul>
-<li>指定被扫描的package</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-package&#x3D;&quot;com.atguigu.component&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>组件装配</li>
-</ol>
-<ul>
-<li>1)需求<ul>
-<li>Controller组件中往往需要用到Service组件的实例，Service组件中往往需要用到Repository组件的实例。Spring可以通过注解的方式帮我们实现属性的装配。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>2)实现依据<ul>
-<li>在指定要扫描的包时，<a href="context:component-scan">context:component-scan</a>元素会自动注册一个bean的后置处理器：AutowiredAnnotationBeanPostProcessor的实例。该后置处理器可以自动装配标记了@Autowired、@Resource或@Inject注解的属性。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>3)@Autowired注解<ul>
-<li>根据类型实现自动装配。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>4)@Resource<ul>
-<li>@Resource注解要求提供一个bean名称的属性，若该属性为空，则自动采用标注处的变量或方法名作为bean的名称。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>5)@Inject(未讲)<ul>
-<li>@Inject和@Autowired注解一样也是按类型注入匹配的bean，但没有reqired属性。</li>
-</ul>
-</li>
-</ul>
-<p>Eg：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.service.impl;</span><br><span class="line"></span><br><span class="line">import javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import com.dr.dao.UserDao;</span><br><span class="line">import com.dr.bean.User;</span><br><span class="line">import com.dr.service.UserService;</span><br><span class="line"></span><br><span class="line">@Service(&quot;userService&quot;)</span><br><span class="line">public class UserServiceImpl implements UserService &#123;</span><br><span class="line">&#x2F;&#x2F;	@Autowired自动装配</span><br><span class="line">	&#x2F;&#x2F;为userDao注入名为userDao的Bean</span><br><span class="line">	@Resource(name&#x3D;&quot;userDao&quot;)&#x2F;&#x2F;（）不写则默认为属性名userDao</span><br><span class="line">	UserDao userDao;</span><br><span class="line"></span><br><span class="line">	public UserDao getUd() &#123;</span><br><span class="line">		return userDao;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setUserDao(UserDao userDao) &#123;</span><br><span class="line">		this.userDao &#x3D; userDao;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public int addUser(User user) &#123;</span><br><span class="line">		return userDao.addUser(user);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/04/04/Sping%E7%9A%84IOC/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -1553,8 +540,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
