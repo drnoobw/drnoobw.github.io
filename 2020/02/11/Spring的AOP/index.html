@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://drnoobw.github.io">
-  <title>Tag: Mybatis | DR的个人博客</title>
+  <title>AOP | DR的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DR的个人博客">
-<meta property="og:url" content="https://drnoobw.github.io/tags/Mybatis/index.html">
+  <meta name="description" content="1 AOP概述 AOP(Aspect-Oriented-Programming，面向切面编程)：是一种新的方法论，是对传统OOP(Object-Oriented-Programming，面向对象编程)的补充。 面向对象  纵向继承机制 面向切面  横向抽取机制       AOP的底层实现： 使用JDK动态代理实现。 使用cglib来实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AOP">
+<meta property="og:url" content="https://drnoobw.github.io/2020/02/11/Spring%E7%9A%84AOP/index.html">
 <meta property="og:site_name" content="DR的个人博客">
+<meta property="og:description" content="1 AOP概述 AOP(Aspect-Oriented-Programming，面向切面编程)：是一种新的方法论，是对传统OOP(Object-Oriented-Programming，面向对象编程)的补充。 面向对象  纵向继承机制 面向切面  横向抽取机制       AOP的底层实现： 使用JDK动态代理实现。 使用cglib来实现">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-11T10:12:34.000Z">
+<meta property="article:modified_time" content="2020-04-05T05:09:55.944Z">
 <meta property="article:author" content="DR">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="DR的个人博客" type="application/atom+xml">
@@ -153,194 +158,391 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spring的AOP" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/%E5%8A%A8%E6%80%81SQL/" class="archive-article-date">
-        <time datetime="2020-02-16T10:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/16/%E5%8A%A8%E6%80%81SQL/" target="_blank">动态SQL</a>
   
+    <h1 class="article-title" itemprop="name">
+      AOP
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+<a href="/2020/02/11/Spring%E7%9A%84AOP/" class="archive-article-date">
+        <time datetime="2020-02-11T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">8分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="1-AOP概述"><a href="#1-AOP概述" class="headerlink" title="1 AOP概述"></a>1 AOP概述</h1><ul>
+<li>AOP(Aspect-Oriented-Programming，面向切面编程)：是一种新的方法论，是对传统OOP(Object-Oriented-Programming，面向对象编程)的补充。<ul>
+<li>面向对象  纵向继承机制</li>
+<li>面向切面  横向抽取机制    </li>
+</ul>
+</li>
+<li>AOP的底层实现：<ul>
+<li>使用JDK动态代理实现。</li>
+<li>使用cglib来实现</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h1 id="2-AOP的优点"><a href="#2-AOP的优点" class="headerlink" title="2 AOP的优点"></a>2 AOP的优点</h1><ul>
+<li>业务模块更简洁，只包含核心业务代码</li>
+<li>公共功能代码不分散，便于维护和升级</li>
+</ul>
+<h1 id="3-AOP术语"><a href="#3-AOP术语" class="headerlink" title="3 AOP术语"></a>3 AOP术语</h1><ul>
+<li>横切关注点<ul>
+<li>从每个方法中抽取出来的同一类非核心业务。（公共功能部分）</li>
+</ul>
+</li>
+<li>切面(Aspect)<ul>
+<li>封装横切关注点信息的类，每个关注点体现为一个通知方法。</li>
+</ul>
+</li>
+<li>通知(Advice)<ul>
+<li>切面必须要完成的各个具体工作</li>
+</ul>
+</li>
+<li>目标(Target)<ul>
+<li>被通知的对象</li>
+</ul>
+</li>
+<li>织入(Weaving)<ul>
+<li>是把增强应用到目标的过程，把advice应用到target的过程</li>
+</ul>
+</li>
+<li>代理(Proxy)<ul>
+<li>向目标对象应用通知之后创建的代理对象</li>
+</ul>
+</li>
+<li>连接点(Joinpoint)<ul>
+<li>横切关注点在程序代码中的具体体现，对应程序执行的某个特定位置。例如：类某个方法调用前、调用后、方法捕获到异常后，最终。</li>
+</ul>
+</li>
+<li>切入点(pointcut)<ul>
+<li>定位连接点的方式。（切入点表达式）</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-AspectJ"><a href="#4-AspectJ" class="headerlink" title="4 AspectJ"></a>4 AspectJ</h1><p>AspectJ：Java社区里最完整最流行的AOP框架。<br>在Spring2.0以上版本中，可以使用基于AspectJ注解或基于XML配置的AOP。</p>
+<h3 id="4-1-用AspectJ注解声明切面"><a href="#4-1-用AspectJ注解声明切面" class="headerlink" title="4.1 用AspectJ注解声明切面"></a>4.1 用AspectJ注解声明切面</h3><ul>
+<li>要在Spring中声明AspectJ切面，只需要在IOC容器中将切面声明为bean实例。</li>
+<li>当在Spring IOC容器中初始化AspectJ切面之后，Spring IOC容器就会为那些与 AspectJ切面相匹配的bean创建代理。</li>
+<li>在AspectJ注解中，切面只是一个带有@Aspect注解的Java类，它往往要包含很多通知。</li>
+<li>通知是标注有某种注解的简单的Java方法。</li>
+<li>AspectJ支持5种类型的通知注解：<ul>
+<li>@Before：前置通知，在方法执行之前执行(<strong>前置增强</strong>)</li>
+<li>@After：后置通知，在方法执行之后执行(<strong>最终增强</strong>)</li>
+<li>@AfterRunning：返回通知，在方法返回结果之后执行(<strong>后置增强</strong>)</li>
+<li>@AfterThrowing：异常通知，在方法抛出异常之后执行(<strong>异常抛出增强</strong>)</li>
+<li>@Around：环绕通知，包含前面四种(<strong>环绕增强</strong>)</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-AOP的配置"><a href="#5-AOP的配置" class="headerlink" title="5 AOP的配置"></a>5 AOP的配置</h1><ul>
+<li>导入所需的jar包<ul>
+<li>aopalliance-1.0.jar</li>
+<li>aspectjweaver-1.6.9.jar</li>
+<li>spring-aop-5.0.8.RELEASE.jar</li>
+<li>spring-aspects-5.0.8.RELEASE.jar</li>
+</ul>
+</li>
+</ul>
+<p><strong>主流：AOP注解配置</strong></p>
+<ul>
+<li>applicationContext.xml配置 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   &lt;!-- 扫描包，让Spring管理 --&gt;</span><br><span class="line">&lt;context:component-scan</span><br><span class="line">	base-package&#x3D;&quot;com.dr.service,com.dr.dao,com.dr.aop&quot; &#x2F;&gt;</span><br><span class="line">&lt;!-- 要想实现切面，一定要引入aop包进行扫描 --&gt;</span><br><span class="line">&lt;!-- 实现aop自动代理 --&gt;</span><br><span class="line">&lt;aop:aspectj-autoproxy &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编写切面类并进行注解</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">package com.dr.aop;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import org.apache.log4j.Logger;</span><br><span class="line">import org.aspectj.lang.JoinPoint;</span><br><span class="line">import org.aspectj.lang.ProceedingJoinPoint;</span><br><span class="line">import org.aspectj.lang.annotation.AfterReturning;</span><br><span class="line">import org.aspectj.lang.annotation.AfterThrowing;</span><br><span class="line">import org.aspectj.lang.annotation.Around;</span><br><span class="line">import org.aspectj.lang.annotation.Aspect;</span><br><span class="line">import org.aspectj.lang.annotation.Before;</span><br><span class="line">import org.aspectj.lang.annotation.Pointcut;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;AOP基于IOC</span><br><span class="line">&#x2F;*声明为组件，让spring 自动管理,实例化*&#x2F;</span><br><span class="line">@Component</span><br><span class="line">&#x2F;* 声明该类为切面bean *&#x2F;</span><br><span class="line">@Aspect</span><br><span class="line">public class UserServiceLogger &#123;</span><br><span class="line">	Logger logger &#x3D; Logger.getLogger(UserServiceLogger.class);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;定义重用切入点</span><br><span class="line">	@Pointcut(&quot;execution(public int *..UserServiceImpl.addUser(..))&quot;)</span><br><span class="line">	public void pc() &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 前置增强</span><br><span class="line">	&#x2F;**</span><br><span class="line">	 * @Before:将方法指定为前置通知 必须设置value，其值为切入点表达式（你要切入的方法）</span><br><span class="line">	 * @param jp</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	@Before(&quot;pc()&quot;)</span><br><span class="line">	public void before(JoinPoint jp) &#123;</span><br><span class="line">		logger.info(&quot;前置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法入参：&quot;</span><br><span class="line">				+ Arrays.toString(jp.getArgs()));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 后置增强</span><br><span class="line">	@AfterReturning(pointcut &#x3D; &quot;pc()&quot;, returning &#x3D; &quot;result&quot;)</span><br><span class="line">	public void afterReturning(JoinPoint jp, Object result) &#123;</span><br><span class="line">		logger.info(&quot;后置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法返回值：&quot; + result);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 异常抛出增强</span><br><span class="line">	@AfterThrowing(pointcut &#x3D; &quot;pc()&quot;, throwing &#x3D; &quot;e&quot;)</span><br><span class="line">	public void afterThrowing(JoinPoint jp, Exception e) &#123;</span><br><span class="line">		logger.info(&quot;异常增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。异常信息：&quot; + e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 环绕增强</span><br><span class="line">	@Around(&quot;pc()&quot;)</span><br><span class="line">	public Object around(ProceedingJoinPoint jp) &#123;</span><br><span class="line">		logger.info(&quot;前置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法入参：&quot;</span><br><span class="line">				+ Arrays.toString(jp.getArgs()));</span><br><span class="line">		try &#123;</span><br><span class="line">			&#x2F;&#x2F; 执行被代理的方法也就是目标方法</span><br><span class="line">			Object o &#x3D; jp.proceed();</span><br><span class="line">			logger.info(&quot;后置增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。方法返回值：&quot; + o);</span><br><span class="line">			&#x2F;&#x2F; 返回目标方法的执行结果，否则报错空指针异常</span><br><span class="line">			return o;</span><br><span class="line">		&#125; catch (Throwable e) &#123;</span><br><span class="line">			logger.info(</span><br><span class="line">					&quot;异常增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。异常信息：&quot; + e.getMessage());</span><br><span class="line">			return null;</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			logger.info(&quot;最终增强：调用 &quot; + jp.getTarget() + &quot; 的 &quot; + jp.getSignature().getName() + &quot; 方法。执行完毕&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="6-五大通知"><a href="#6-五大通知" class="headerlink" title="6 五大通知"></a>6 五大通知</h1><ul>
+<li>通知<ul>
+<li>在具体的连接点上要执行的操作。</li>
+<li>一个切面可以包括一个或者多个通知。</li>
+<li>通知所使用的注解的值往往是切入点表达式。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>前置通知(<strong>前置增强</strong>)</p>
+<ul>
+<li>前置通知：在方法执行之前执行的通知</li>
+<li>使用@Before注解</li>
+</ul>
+</li>
+<li><p>后置通知(<strong>最终增强</strong>)</p>
+<ul>
+<li>后置通知：后置通知是在连接点完成之后执行的，即连接点返回结果或者抛出异常的时候</li>
+<li>使用@After注解</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>返回通知(<strong>后置增强</strong>)<ul>
+<li>返回通知：无论连接点是正常返回还是抛出异常，后置通知都会执行。如果只想在连接点返回的时候记录日志，应使用返回通知代替后置通知。</li>
+<li>使用@AfterReturning注解,在返回通知中访问连接点的返回值<ul>
+<li>在返回通知中，只要将returning属性添加到@AfterReturning注解中，就可以访问连接点的返回值。该属性的值即为用来传入返回值的参数名称</li>
+<li>必须在通知方法的签名中添加一个同名参数。在运行时Spring AOP会通过这个参数传递返回值</li>
+<li>原始的切点表达式需要出现在pointcut属性中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>异常通知(<strong>异常抛出增强</strong>)<ul>
+<li>异常通知：只在连接点抛出异常时才执行异常通知</li>
+<li>将throwing属性添加到@AfterThrowing注解中，也可以访问连接点抛出的异常。Throwable是所有错误和异常类的顶级父类，所以在异常通知方法可以捕获到任何错误和异常。</li>
+<li>如果只对某种特殊的异常类型感兴趣，可以将参数声明为其他异常的参数类型。然后通知就只在抛出这个类型及其子类的异常时才被执行。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>环绕通知(<strong>环绕增强</strong>)<ul>
+<li>环绕通知是所有通知类型中功能最为强大的，能够全面地控制连接点，甚至可以控制是否执行连接点。</li>
+<li>对于环绕通知来说，连接点的参数类型必须是ProceedingJoinPoint。它是 JoinPoint的子接口，允许控制何时执行，是否执行连接点。</li>
+<li>在环绕通知中需要明确调用ProceedingJoinPoint的proceed()方法来执行被代理的方法。如果忘记这样做就会导致通知被执行了，但目标方法没有被执行。</li>
+<li>注意：环绕通知的方法需要返回目标方法执行之后的结果，即调用 joinPoint.proceed();的返回值，否则会出现空指针异常。</li>
+</ul>
+</li>
+</ul>
+<h1 id="在XML中配置AOP"><a href="#在XML中配置AOP" class="headerlink" title="在XML中配置AOP"></a>在XML中配置AOP</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置切面类 --&gt;</span><br><span class="line">&lt;bean id&#x3D;&quot;userServiceLogger&quot; class&#x3D;&quot;com.dr.aop.UserServiceLogger&quot;&gt;&lt;&#x2F;bean&gt;</span><br><span class="line">&lt;!-- 进行AOP配置 --&gt;</span><br><span class="line">&lt;aop:config&gt;</span><br><span class="line">	&lt;aop:pointcut</span><br><span class="line">		expression&#x3D;&quot;execution(public int</span><br><span class="line">		addUser(com.dr.bean.User))&quot;</span><br><span class="line">		id&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">	&lt;aop:aspect ref&#x3D;&quot;userServiceLogger&quot;&gt;</span><br><span class="line">		&lt;aop:before method&#x3D;&quot;before&quot; pointcut-ref&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:after-returning method&#x3D;&quot;afterReturning&quot;</span><br><span class="line">			pointcut-ref&#x3D;&quot;pc&quot; returning&#x3D;&quot;result&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:after-throwing method&#x3D;&quot;afterThrowing&quot;</span><br><span class="line">			pointcut-ref&#x3D;&quot;pc&quot; throwing&#x3D;&quot;e&quot; &#x2F;&gt;</span><br><span class="line">		&lt;aop:around method&#x3D;&quot;around&quot; pointcut-ref&#x3D;&quot;pc&quot; &#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;aop:aspect&gt;</span><br><span class="line">&lt;&#x2F;aop:config&gt;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weichat.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          DR
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://drnoobw.github.io/2020/02/11/Spring的AOP/" title="AOP" target="_blank">https://drnoobw.github.io/2020/02/11/Spring的AOP/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://drnoobw.github.io/2020/02/11/Spring%E7%9A%84AOP/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" class="archive-article-date">
-        <time datetime="2020-02-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2020/02/11/Sping%E7%9A%84IOC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          IOC
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/11/Spring%E7%9A%84%E4%BA%8B%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring的事务</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/16/SQL%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6/" target="_blank">SQL映射文件</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-AOP概述"><span class="toc-number">1.</span> <span class="toc-text">1 AOP概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-AOP的优点"><span class="toc-number">2.</span> <span class="toc-text">2 AOP的优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-AOP术语"><span class="toc-number">3.</span> <span class="toc-text">3 AOP术语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-AspectJ"><span class="toc-number">4.</span> <span class="toc-text">4 AspectJ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-用AspectJ注解声明切面"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1 用AspectJ注解声明切面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-AOP的配置"><span class="toc-number">5.</span> <span class="toc-text">5 AOP的配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-五大通知"><span class="toc-number">6.</span> <span class="toc-text">6 五大通知</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在XML中配置AOP"><span class="toc-number">7.</span> <span class="toc-text">在XML中配置AOP</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/16/%E5%88%9D%E8%AF%86Mybatis/" class="archive-article-date">
-        <time datetime="2020-02-16T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/16/%E5%88%9D%E8%AF%86Mybatis/" target="_blank">初识Mybatis</a>
-  
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/15/Mybatis%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-        <time datetime="2020-02-15T10:12:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/15/Mybatis%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" target="_blank">Mybatis的搭建</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Mybatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
 
 
           </div>
@@ -364,9 +566,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
